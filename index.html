@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digitally Fit Events — Create, Promote, and Sell Your Events Across Africa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="main.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- Scroll Progress -->
+
+
+  <!-- Decorative background overlays -->
+  <div class="bg-overlays" aria-hidden="true">
+    <span class="bokeh bokeh-1"></span>
+    <span class="bokeh bokeh-2"></span>
+    <span class="bokeh bokeh-3"></span>
+    <span class="bokeh bokeh-4"></span>
+    <span class="bokeh bokeh-5"></span>
+    <span class="bokeh bokeh-6"></span>
+
+    <!-- Constellation / mesh network SVG -->
+    <svg class="mesh mesh-left" viewBox="0 0 400 400" preserveAspectRatio="none" aria-hidden="true">
+      <g stroke="rgba(100,120,150,0.13)" stroke-width="0.8" fill="none">
+        <path d="M20 60 L120 30 L210 90 L300 50 L380 110" />
+        <path d="M40 200 L130 160 L220 230 L310 190 L380 260" />
+        <path d="M20 340 L110 300 L200 360 L290 320 L380 380" />
+        <path d="M120 30 L130 160 L110 300" />
+        <path d="M210 90 L220 230 L200 360" />
+        <path d="M300 50 L310 190 L290 320" />
+      </g>
+      <g fill="rgba(100,120,150,0.28)">
+        <circle cx="20" cy="60" r="1.6" />
+        <circle cx="120" cy="30" r="1.6" />
+        <circle cx="210" cy="90" r="1.6" />
+        <circle cx="300" cy="50" r="1.6" />
+        <circle cx="380" cy="110" r="1.6" />
+        <circle cx="40" cy="200" r="1.6" />
+        <circle cx="130" cy="160" r="1.6" />
+        <circle cx="220" cy="230" r="1.6" />
+        <circle cx="310" cy="190" r="1.6" />
+        <circle cx="380" cy="260" r="1.6" />
+        <circle cx="20" cy="340" r="1.6" />
+        <circle cx="110" cy="300" r="1.6" />
+        <circle cx="200" cy="360" r="1.6" />
+        <circle cx="290" cy="320" r="1.6" />
+        <circle cx="380" cy="380" r="1.6" />
+      </g>
+    </svg>
+    <svg class="mesh mesh-right" viewBox="0 0 400 400" preserveAspectRatio="none" aria-hidden="true">
+      <g stroke="rgba(100,120,150,0.13)" stroke-width="0.8" fill="none">
+        <path d="M30 40 L110 90 L210 40 L300 110 L380 60" />
+        <path d="M30 180 L120 140 L220 200 L300 150 L380 220" />
+        <path d="M30 330 L120 290 L210 350 L310 300 L380 360" />
+        <path d="M110 90 L120 140 L120 290" />
+        <path d="M210 40 L220 200 L210 350" />
+        <path d="M300 110 L300 150 L310 300" />
+      </g>
+      <g fill="rgba(100,120,150,0.28)">
+        <circle cx="30" cy="40" r="1.6" />
+        <circle cx="110" cy="90" r="1.6" />
+        <circle cx="210" cy="40" r="1.6" />
+        <circle cx="300" cy="110" r="1.6" />
+        <circle cx="380" cy="60" r="1.6" />
+        <circle cx="30" cy="180" r="1.6" />
+        <circle cx="120" cy="140" r="1.6" />
+        <circle cx="220" cy="200" r="1.6" />
+        <circle cx="300" cy="150" r="1.6" />
+        <circle cx="380" cy="220" r="1.6" />
+        <circle cx="30" cy="330" r="1.6" />
+        <circle cx="120" cy="290" r="1.6" />
+        <circle cx="210" cy="350" r="1.6" />
+        <circle cx="310" cy="300" r="1.6" />
+        <circle cx="380" cy="360" r="1.6" />
+      </g>
+    </svg>
+
+    <!-- Decorative sparkle — muted slate to suit the light background -->
+    <svg class="sparkle" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 2 L13.8 9.5 L21 12 L13.8 14.5 L12 22 L10.2 14.5 L3 12 L10.2 9.5 Z" fill="rgba(100,120,160,0.35)" />
+    </svg>
+  </div>
+
+  <div class="page">
+    <!-- ===================== Header ===================== -->
+    <header class="site-header" role="banner">
+      <a class="brand" href="#" aria-label="Digitally Fit Events home">
+        <img src="dfe-logo.png" alt="Digitally Fit Events logo" class="brand-logo" />
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#" class="nav-link is-active">Home</a></li>
+          <li><a href="#" class="nav-link">Events</a></li>
+          <li><a href="#" class="nav-link">Organizers</a></li>
+          <li><a href="#" class="nav-link">Pricing</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#" class="btn btn-ghost">Log in</a>
+        <a href="#" class="btn btn-dark">Create Event</a>
+      </div>
+
+      <!-- Hamburger Menu Trigger (Mobile only) -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger-bar bar-top"></span>
+        <span class="hamburger-bar bar-middle"></span>
+        <span class="hamburger-bar bar-bottom"></span>
+      </button>
+    </header>
+
+    <!-- ===================== Mobile Overlay Menu ===================== -->
+    <div class="mobile-menu-overlay" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-inner">
+        <div class="mobile-menu-header">
+          <a class="brand" href="#" aria-label="Digitally Fit Events home">
+            <img src="dfe-logo.png" alt="Digitally Fit Events logo" class="brand-logo" />
+          </a>
+          <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <nav class="mobile-nav" aria-label="Mobile Primary">
+          <ul>
+            <li style="--i: 1;"><a href="#" class="mobile-nav-link is-active">Home</a></li>
+            <li style="--i: 2;"><a href="#" class="mobile-nav-link">Events</a></li>
+            <li style="--i: 3;"><a href="#" class="mobile-nav-link">Organizers</a></li>
+            <li style="--i: 4;"><a href="#" class="mobile-nav-link">Pricing</a></li>
+            <li style="--i: 5;"><a href="#" class="mobile-nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="mobile-menu-footer">
+          <a href="#" class="btn btn-ghost" style="--i: 6;">Log in</a>
+          <a href="#" class="btn btn-dark" style="--i: 7;">Create Event</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== Hero ===================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title" class="hero-title">
+        CREATE. PROMOTE. SELL<br />#DIGITALLYFITEVENTS
+      </h1>
+
+      <p class="hero-subtitle">Create events, sell tickets and promote concerts, festivals, workshops and experiences
+        across Africa, all from one platform.</p>
+
+      <div class="hero-ctas">
+        <a href="#" class="cta-primary">
+          <span>Start Selling Tickets</span>
+          <span class="cta-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="14" height="14">
+              <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+        <a href="#" class="cta-secondary">
+          <span>Explore Events</span>
+          <span class="cta-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="14" height="14">
+              <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================== Product Screenshot ===================== -->
+    <figure class="product-shot" aria-label="Event organizer dashboard preview">
+      <div class="browser-frame">
+        <div class="browser-header">
+          <div class="browser-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="browser-address">organizer.digitallyfitevents.com</div>
+        </div>
+        <img src="page.PNG" alt="Screenshot of the Digitally Fit Events organizer dashboard" class="product-shot-img"
+          loading="lazy" decoding="async" />
+      </div>
+    </figure>
+
+    <!-- ===================== Trusted By ===================== -->
+    <section class="sp-section" aria-label="Trusted by leading companies">
+      <p class="sp-heading">
+        Trusted by experts.
+        <strong>Used by the leaders.</strong>
+      </p>
+      <div class="sp-track-wrap">
+        <div class="sp-track" id="sp-track">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Stats Section ===================== -->
+    <section class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">500K+</div>
+          <div class="stat-label">Tickets Sold</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">10K+</div>
+          <div class="stat-label">Events Hosted</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">50+</div>
+          <div class="stat-label">African Cities</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">24/7</div>
+          <div class="stat-label">Organizer Support</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Features ===================== -->
+    <section class="features" id="features">
+      <span class="section-eyebrow">Powerful Features</span>
+      <h2 class="section-title">Everything you need to<br />sell out your next event</h2>
+      <p class="section-subtitle">Our comprehensive suite of tools helps you create, promote, and manage events across
+        Africa with ease.</p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+              <line x1="7" y1="7" x2="7.01" y2="7" />
+            </svg>
+          </div>
+          <h3 class="feature-title">Smart Ticketing</h3>
+          <p class="feature-description">Sell multiple ticket tiers, offer early-bird discounts, and process payments
+            securely in local currencies.</p>
+          <a href="#" class="feature-link">
+            Learn more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+            </svg>
+          </div>
+          <h3 class="feature-title">Global Promotion</h3>
+          <p class="feature-description">Automatically promote your event across social media platforms and to our
+            growing community of event-goers.</p>
+          <a href="#" class="feature-link">
+            Learn more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+              <line x1="12" y1="22.08" x2="12" y2="12" />
+            </svg>
+          </div>
+          <h3 class="feature-title">Real-time Analytics</h3>
+          <p class="feature-description">Track ticket sales, monitor attendee check-ins, and gain insights into your
+            marketing performance.</p>
+          <a href="#" class="feature-link">
+            Learn more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Integrations ===================== -->
+    <section class="integrations" id="integrations">
+      <span class="section-eyebrow">Integrations</span>
+      <h2 class="section-title">Seamlessly connect with<br />the tools you love</h2>
+      <p class="section-subtitle">Connect your favorite marketing, payment, and streaming tools to automate your event
+        workflow.</p>
+
+      <div class="diagram" id="diagram">
+        <div class="hub" id="hub">
+          <svg class="hub-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.2" stroke-linecap="round">
+            <path
+              d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+          </svg>
+        </div>
+
+        <div class="icon-card card-tl" title="Stripe">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#635bff">
+            <path
+              d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C4.576 23.082 7.501 24 10.9 24c2.616 0 4.729-.596 6.28-1.724 1.618-1.188 2.452-2.992 2.452-5.29 0-4.11-2.508-5.842-5.656-7.836z" />
+          </svg>
+        </div>
+        <div class="icon-card card-ml" title="Zoom">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#2D8CFF">
+            <path
+              d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm6.5 15.5l-2.5-1.5V11l2.5-1.5s.5-.3.5.5v5s0 .8-.5.5zm-4-5.5v4c0 .6-.4 1-1 1h-6c-.6 0-1-.4-1-1v-4c0-.6.4-1 1-1h6c.6 0 1 .4 1 1z" />
+          </svg>
+        </div>
+        <div class="icon-card card-bl" title="Google Calendar">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#4285F4">
+            <path
+              d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z" />
+          </svg>
+        </div>
+        <div class="icon-card card-tr" title="Mailchimp">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFE01B">
+            <path
+              d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6z" />
+          </svg>
+        </div>
+        <div class="icon-card card-mr" title="TikTok">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.02-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.59-1.01V15.5c0 1.56-.47 3.12-1.35 4.41-1.61 2.37-4.45 3.61-7.23 3.1-2.77-.51-5.06-2.7-5.59-5.46-.53-2.77.58-5.69 2.82-7.35 1.58-1.17 3.56-1.64 5.51-1.35V12.8c-.59-.26-1.28-.35-1.91-.25-.63.1-1.23.39-1.7.83-.8.74-1.1 1.88-.8 2.92.3.9 1.05 1.65 1.95 1.95.74.24 1.56.2 2.27-.12.56-.25.99-.7 1.25-1.25.17-.37.25-.78.25-1.18V.02z" />
+          </svg>
+        </div>
+        <div class="icon-card card-br" title="WhatsApp">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#25D366">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.004 20c-1.42 0-2.81-.383-4.016-1.106L5 19.828l.946-2.887a8.031 8.031 0 0 1-1.218-4.254c0-4.437 3.612-8.049 8.053-8.049 2.152 0 4.175.837 5.7 2.358 1.52 1.52 2.355 3.54 2.355 5.69 0 4.439-3.614 8.051-8.053 8.051h.001z" />
+          </svg>
+        </div>
+
+        <svg class="connector-svg" id="connector-svg"></svg>
+      </div>
+
+      <div class="integrations-list">
+        <div class="int-item"><span class="int-dot"></span>Stripe</div>
+        <div class="int-item"><span class="int-dot"></span>Zoom</div>
+        <div class="int-item"><span class="int-dot"></span>Google Calendar</div>
+        <div class="int-item"><span class="int-dot"></span>Mailchimp</div>
+        <div class="int-item"><span class="int-dot"></span>TikTok</div>
+        <div class="int-item"><span class="int-dot"></span>and 50+ more</div>
+      </div>
+    </section>
+
+    <!-- ===================== Steps Section (How it works) ===================== -->
+    <section class="steps-section" id="how-it-works">
+      <span class="section-eyebrow">Onboarding</span>
+      <h2 class="section-title">Get your event live in<br />3 simple steps</h2>
+      <p class="section-subtitle">Our seamless onboarding process ensures you're selling tickets in record time.</p>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3 class="step-title">List Your Event</h3>
+          <p class="step-description">Set up your event details, ticket tiers, and beautiful event pages in minutes.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3 class="step-title">Spread the Word</h3>
+          <p class="step-description">Use our promotion tools to reach your audience on social media and beyond.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3 class="step-title">Scan & Manage</h3>
+          <p class="step-description">Use our mobile app to scan QR codes and manage check-ins at the door.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Testimonials ===================== -->
+    <section class="testimonials" id="testimonials">
+      <span class="section-eyebrow">Social Proof</span>
+      <h2 class="section-title">What Event Organizers<br />Are Saying</h2>
+      <p class="section-subtitle">Hear from organizers who've scaled their events with Digitally Fit Events.</p>
+
+      <div class="testimonials-grid">
+        <!-- Card 1 — David -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+          </div>
+          <p class="quote-text">"DFE has been a game-changer for our music festivals. The automated promotion and
+            seamless ticketing have significantly increased our reach across Africa."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="padding:0;overflow:hidden;">
+              <img src="avatar_frank.png" alt="David"
+                style="width:100%;height:100%;object-fit:cover;border-radius:12px;"
+                onerror="this.parentElement.textContent='D';this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.parentElement.style.background='linear-gradient(135deg,#ff7f00,#ff9f40)';this.parentElement.style.color='#fff';this.parentElement.style.fontSize='17px';this.parentElement.style.fontWeight='700';" />
+            </div>
+            <div>
+              <div class="author-name">David K.</div>
+              <div class="author-role">Festival Director, AfroBeat Fest</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 — Sarah -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+          </div>
+          <p class="quote-text">"As a fitness coach, I needed a simple way to manage workshop bookings. DFE made it
+            incredibly easy to set up and track every attendee."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="padding:0;overflow:hidden;background:#0056b3;">
+              <img src="avatar_fredrick.png" alt="Sarah"
+                style="width:100%;height:100%;object-fit:cover;border-radius:12px;"
+                onerror="this.parentElement.textContent='S';this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.parentElement.style.color='#fff';this.parentElement.style.fontSize='17px';this.parentElement.style.fontWeight='700';" />
+            </div>
+            <div>
+              <div class="author-name">Sarah M.</div>
+              <div class="author-role">Founder, FitLife Workshops</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 — Michael -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+          </div>
+          <p class="quote-text">"The real-time analytics help us make better marketing decisions on the fly. We've seen
+            a 30% increase in ticket sales since switching to DFE."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="padding:0;overflow:hidden;background:#ff7f00;">
+              <img src="avatar_sarah.png" alt="Michael"
+                style="width:100%;height:100%;object-fit:cover;border-radius:12px;"
+                onerror="this.parentElement.textContent='M';this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.parentElement.style.color='#fff';this.parentElement.style.fontSize='17px';this.parentElement.style.fontWeight='700';" />
+            </div>
+            <div>
+              <div class="author-name">Michael O.</div>
+              <div class="author-role">Operations, CinemaHub Africa</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social proof summary bar -->
+      <div class="testimonials-proof-bar">
+        <div class="proof-avatars">
+          <div class="proof-av"><img src="proof_av_j.png" alt="Organizer J" /></div>
+          <div class="proof-av"><img src="proof_av_m.png" alt="Organizer M" /></div>
+          <div class="proof-av"><img src="proof_av_a.png" alt="Organizer A" /></div>
+          <div class="proof-av"><img src="proof_av_k.png" alt="Organizer K" /></div>
+        </div>
+        <p class="proof-label">Trusted by <strong>10,000+ Organizers</strong> worldwide</p>
+        <div class="proof-sep"></div>
+        <div class="proof-score">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="#f59e0b">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+          </svg>
+          4.9 / 5.0
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Pricing ===================== -->
+    <section class="pricing" id="pricing">
+      <span class="section-eyebrow">Pricing</span>
+      <h2 class="section-title">Transparent Pricing for All</h2>
+      <p class="section-subtitle">We only succeed when you do. Choose the plan that fits your event scale.</p>
+
+      <div class="pricing-toggle">
+        <button class="toggle-btn active" id="monthly-btn">One-Time</button>
+        <button class="toggle-btn" id="annual-btn">Subscription</button>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card featured">
+          <span class="popular-badge">Popular</span>
+          <h3 class="plan-name">Standard Plan</h3>
+          <div class="price-box">
+            <span class="price-amount" id="hotspot-price">3.5%</span>
+            <span class="price-label">+$0.50 per ticket</span>
+          </div>
+          <ul class="pricing-features">
+            <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg> Unlimited Events</li>
+            <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg> Multi-currency Support</li>
+            <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg> QR Code Check-ins</li>
+            <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg> Basic Analytics</li>
+          </ul>
+          <a href="#" class="btn btn-dark" style="width: 100%;">Create Event Free</a>
+        </div>
+
+        <div class="pricing-card">
+          <h3 class="plan-name">Enterprise</h3>
+          <div class="price-box">
+            <span class="price-amount" id="pppoe-price">Custom</span>
+            <span class="price-label" id="pppoe-label">for large festivals</span>
+          </div>
+          <ul class="pricing-features">
+            <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg> Dedicated Manager</li>
+            <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg> Advanced Reporting</li>
+            <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg> On-site Support</li>
+            <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg> Custom Domain</li>
+          </ul>
+          <a href="#" class="btn btn-ghost" style="width: 100%;">Contact Sales</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="faq" id="faq">
+      <div class="faq-eyebrow">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+          <line x1="12" y1="17" x2="12.01" y2="17" />
+        </svg>
+        Your Queries, Simplified
+      </div>
+      <h2 class="section-title">Questions? Answers!</h2>
+      <p class="section-subtitle">Find quick answers to the most common questions about our platform.</p>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span class="faq-question">How do I get paid for ticket sales?</span>
+            <span class="faq-chevron-wrap">
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </button>
+          <div class="faq-content">
+            <div class="faq-answer">
+              We settle payments directly to your connected bank account or mobile money wallet. Settlements typically
+              happen within 48 hours after your event concludes.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span class="faq-question">Can I sell tickets in multiple currencies?</span>
+            <span class="faq-chevron-wrap">
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </button>
+          <div class="faq-content">
+            <div class="faq-answer">
+              Yes! DFE supports multiple African currencies and major global currencies. Attendees can pay using their
+              preferred method, including M-Pesa, Card, and Bank Transfer.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span class="faq-question">Is there a mobile app for check-ins?</span>
+            <span class="faq-chevron-wrap">
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </button>
+          <div class="faq-content">
+            <div class="faq-answer">
+              Absolutely. Our organizer app is available for both iOS and Android. You can scan QR codes, track
+              real-time attendance, and manage entries directly from your smartphone.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span class="faq-question">Can I customize the event page to fit my brand?</span>
+            <span class="faq-chevron-wrap">
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </button>
+          <div class="faq-content">
+            <div class="faq-answer">
+              Yes! You can white-label your event pages with your own branding, colors, and images. DFE provides a
+              clean, professional canvas for your event to shine.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== Newsletter Section ===================== -->
+    <section class="newsletter-section">
+      <div class="newsletter-card">
+        <div class="newsletter-content">
+          <h2 class="newsletter-title">Stay in the loop</h2>
+          <p class="newsletter-text">Join 5,000+ organizers receiving our weekly event management and promotion tips.
+          </p>
+        </div>
+        <form class="newsletter-form" onsubmit="event.preventDefault();">
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit" class="btn-dark">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===================== CTA Banner ===================== -->
+    <section class="cta-banner">
+      <div class="cta-card">
+        <!-- ── LEFT COLUMN ── -->
+        <div class="left-col">
+          <div class="badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#3a4560" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+            Make the switch
+          </div>
+
+          <h2 class="heading">Why Choose<br>Digitally Fit Events?</h2>
+
+          <p class="body-text">
+            Transform your event management with a platform that grows with you. Our transparent model combined with
+            high-end features makes DFE the smart choice for organizers of all sizes.
+          </p>
+
+          <div class="btn-row">
+            <button class="cta-primary">
+              Get Started – Free
+              <span class="cta-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="14" height="14">
+                  <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </span>
+            </button>
+
+            <button class="cta-secondary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="width: 16px; height: 16px; margin-right: 8px;">
+                <circle cx="12" cy="12" r="10" />
+                <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none" />
+              </svg>
+              View Demo
+            </button>
+          </div>
+        </div>
+
+        <!-- ── RIGHT COLUMN — Dashboard card ── -->
+        <div class="right-col">
+          <div class="dashboard-card">
+            <!-- Card header -->
+            <div class="card-header">
+              <span class="card-title">Balance</span>
+              <span class="on-track-badge">
+                <span class="on-track-dot"></span>
+                On track
+              </span>
+            </div>
+
+            <!-- Inner stat card with bar chart -->
+            <div class="stat-card">
+              <p class="stat-label">Ticket Revenue</p>
+              <p class="stat-value">682.50</p>
+              <hr class="dashed-line" />
+
+              <!-- Bar chart — heights reflect the screenshot -->
+              <div class="bar-chart" id="barChart">
+                <!-- Bars injected by JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Footer ===================== -->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="dfe-logo.png" alt="Digitally Fit Events logo" class="brand-logo" style="margin-bottom: 20px;" />
+          <p class="footer-desc">Empowering event organizers across Africa with smart ticketing and promotion tools.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul class="footer-links">
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Promotion</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Features</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul class="footer-links">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Status</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Social</h4>
+          <ul class="footer-links">
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Digitally Fit Events. All rights reserved.</p>
+        <p>Built with ❤️ for Event Organizers</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===================== Floating WhatsApp Button ===================== -->
+  <div class="wa-float" id="wa-float" role="complementary" aria-label="Chat on WhatsApp">
+    <!-- Tooltip card (shows on hover) -->
+    <div class="wa-tooltip" id="wa-tooltip">
+      <button class="wa-tooltip-close" id="wa-close" aria-label="Dismiss">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"
+          stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+      <p class="wa-tooltip-title">Chat with us on WhatsApp <span class="wa-wave">👋</span></p>
+      <p class="wa-tooltip-sub">We typically reply in minutes</p>
+    </div>
+    <!-- WhatsApp button -->
+    <a class="wa-btn" href="https://wa.me/254700000000" target="_blank" rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp">
+      <!-- Official WhatsApp icon -->
+      <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M16.002 2C8.268 2 2 8.268 2 16.002c0 2.477.648 4.8 1.778 6.82L2 30l7.38-1.752A13.94 13.94 0 0 0 16.002 30C23.732 30 30 23.732 30 16.002 30 8.268 23.732 2 16.002 2zm0 25.417a11.36 11.36 0 0 1-5.795-1.586l-.416-.247-4.38 1.04 1.076-4.265-.271-.437A11.365 11.365 0 0 1 4.583 16c0-6.298 5.12-11.418 11.418-11.418S27.42 9.702 27.42 16c0 6.3-5.12 11.418-11.418 11.418zm6.258-8.548c-.343-.172-2.03-1.002-2.345-1.116-.315-.114-.544-.171-.773.172-.229.343-.886 1.116-1.086 1.344-.2.229-.4.257-.742.086-.343-.172-1.449-.534-2.76-1.703-1.02-.91-1.71-2.033-1.91-2.376-.2-.343-.021-.529.15-.7.154-.152.343-.4.514-.6.172-.2.229-.343.343-.572.114-.229.057-.429-.029-.6-.086-.172-.773-1.863-1.059-2.549-.28-.672-.563-.58-.773-.591l-.657-.011c-.229 0-.6.086-.914.429-.315.343-1.2 1.173-1.2 2.863 0 1.69 1.228 3.32 1.4 3.549.171.229 2.42 3.692 5.862 5.177.82.354 1.46.566 1.958.724.823.261 1.572.224 2.164.136.66-.099 2.03-.83 2.317-1.631.286-.8.286-1.486.2-1.63-.085-.142-.314-.228-.657-.4z" />
+      </svg>
+    </a>
+  </div>
