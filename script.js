@@ -29,6 +29,78 @@
 })();
 
 /* ============================================================
+   Scroll Progress Bar
+   Scales the fixed top bar to match how far the page is scrolled.
+   ============================================================ */
+(function () {
+  const bar = document.getElementById('scroll-progress');
+  if (!bar) return;
+
+  let ticking = false;
+
+  function update() {
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - doc.clientHeight;
+    bar.style.transform = 'scaleX(' + (max > 0 ? window.scrollY / max : 0) + ')';
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    window.requestAnimationFrame(update);
+    ticking = true;
+  }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+
+/* ============================================================
+   Scroll Reveal
+   Tags sections and cards with `.reveal`, then animates them in
+   as they enter the viewport. Grid children get a small stagger.
+   Classes are removed after the animation so hover transforms
+   keep working as designed.
+   ============================================================ */
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  // Staggered groups — direct children animate one after another
+  document.querySelectorAll(
+    '.features-grid, .steps-grid, .lifecycle-grid, .channels-grid, .testimonials-grid, .pricing-grid, .stats-grid, .faq-list, .integrations-list'
+  ).forEach(grid => {
+    Array.from(grid.children).forEach((el, i) => {
+      el.classList.add('reveal');
+      el.style.setProperty('--reveal-delay', Math.min(i * 0.08, 0.4).toFixed(2) + 's');
+    });
+  });
+
+  // Standalone elements
+  document.querySelectorAll(
+    '.section-eyebrow, .section-title, .section-subtitle, .sp-heading, .faq-eyebrow, ' +
+    '.pricing-toggle, .diagram, .testimonials-proof-bar, .cta-card, .microsite-preview, .channel-badge, ' +
+    '.lifecycle-number, .lifecycle-phase, .lifecycle-title'
+  ).forEach(el => el.classList.add('reveal'));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      el.classList.add('is-visible');
+      io.unobserve(el);
+      el.addEventListener('animationend', function onEnd(ev) {
+        if (ev.target !== el || ev.animationName !== 'revealUp') return;
+        el.classList.remove('reveal', 'is-visible');
+        el.style.removeProperty('--reveal-delay');
+        el.removeEventListener('animationend', onEnd);
+      });
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+
+/* ============================================================
    Stats Counter Animation
    ============================================================ */
 (function () {
@@ -83,13 +155,13 @@
   if (!track) return;
 
   const logos = [
-    { name: "Safaricom", color: "#1fa348" },
-    { name: "Heineken", color: "#ff2b2b" },
-    { name: "Coca-Cola", color: "#ed1c16" },
-    { name: "Red Bull", color: "#001d5d" },
-    { name: "MTV Base", color: "#000" },
-    { name: "Trace Mziki", color: "#ff0000" },
-    { name: "KBL", color: "#d4af37" }
+    { name: "Digitally Fit Awards", color: "#ff7f00" },
+    { name: "Tuqio", color: "#1fa348" },
+    { name: "Elimisha Network", color: "#4f46e5" },
+    { name: "Acco", color: "#0ea5e9" },
+    { name: "Mema Awards", color: "#d97706" },
+    { name: "Change Africa Foundation", color: "#7c3aed" },
+    { name: "Africa AI Future Awards", color: "#e11d48" }
   ];
 
   // Render twice for seamless loop
@@ -117,7 +189,12 @@
     const dH = dRect.height;
     const hCx = dW / 2;
     const hCy = dH / 2;
-    const hHalf = 50; // half hub width (hub is 100px wide)
+    // Measure live so the beams stay attached when the hub and
+    // icon cards shrink at mobile breakpoints
+    const hubEl = diagram.querySelector('.hub');
+    const hHalf = hubEl ? hubEl.getBoundingClientRect().width / 2 : 50;
+    const cardEl = diagram.querySelector('.icon-card');
+    const cardHalf = cardEl ? cardEl.getBoundingClientRect().width / 2 : 28;
 
     // Use getBoundingClientRect for pixel-perfect positions,
     // including cards placed with bottom/right or CSS transforms
@@ -163,8 +240,8 @@
     ${makePath({ x: hCx + hHalf, y: hCy       }, mr, 'beamRight', 'glow', 0.45)}
     ${makePath({ x: hCx + hHalf, y: hCy + 18  }, br, 'beamRight', 'glow', 0.75)}
 
-    ${makeBeam(ml.x + 28,      hCy, hCx - hHalf,  hCy, 'beamLeft',  0)}
-    ${makeBeam(hCx + hHalf,    hCy, mr.x - 28,    hCy, 'beamRight', 0.3)}
+    ${makeBeam(ml.x + cardHalf, hCy, hCx - hHalf,   hCy, 'beamLeft',  0)}
+    ${makeBeam(hCx + hHalf,     hCy, mr.x - cardHalf, hCy, 'beamRight', 0.3)}
     `;
   }
 
@@ -208,7 +285,7 @@
     annualBtn.classList.remove('active');
     hotspotPrice.textContent = '3.5%';
     pppoePrice.textContent = 'Custom';
-    pppoeLabel.textContent = 'for large festivals';
+    pppoeLabel.textContent = 'for large-scale awards';
   });
 
   annualBtn.addEventListener('click', () => {

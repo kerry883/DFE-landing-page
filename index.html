@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digitally Fit Events — Create, Promote, and Sell Your Events Across Africa</title>
+  <title>Digitally Fit Awards — The Complete Awards Management Platform for Africa</title>
+  <link rel="icon" type="image/png" href="logo-favicon.png" />
+  <link rel="apple-touch-icon" href="logo-favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -14,7 +16,7 @@
 
 <body>
   <!-- Scroll Progress -->
-
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
   <!-- Decorative background overlays -->
   <div class="bg-overlays" aria-hidden="true">
@@ -81,7 +83,7 @@
       </g>
     </svg>
 
-    <!-- Decorative sparkle — muted slate to suit the light background -->
+    <!-- Decorative sparkle -->
     <svg class="sparkle" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M12 2 L13.8 9.5 L21 12 L13.8 14.5 L12 22 L10.2 14.5 L3 12 L10.2 9.5 Z" fill="rgba(100,120,160,0.35)" />
     </svg>
@@ -90,23 +92,23 @@
   <div class="page">
     <!-- ===================== Header ===================== -->
     <header class="site-header" role="banner">
-      <a class="brand" href="#" aria-label="Digitally Fit Events home">
-        <img src="dfe-logo.png" alt="Digitally Fit Events logo" class="brand-logo" />
+      <a class="brand" href="#" aria-label="Digitally Fit Awards home">
+        <img src="dfe-logo.png" alt="Digitally Fit Awards logo" class="brand-logo" />
       </a>
 
       <nav class="primary-nav" aria-label="Primary">
         <ul>
           <li><a href="#" class="nav-link is-active">Home</a></li>
-          <li><a href="#" class="nav-link">Events</a></li>
-          <li><a href="#" class="nav-link">Organizers</a></li>
-          <li><a href="#" class="nav-link">Pricing</a></li>
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="#pricing" class="nav-link">Pricing</a></li>
           <li><a href="#" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
-        <a href="#" class="btn btn-ghost">Log in</a>
-        <a href="#" class="btn btn-dark">Create Event</a>
+        <a href="#" class="btn btn-ghost">Request a Quote</a>
+        <a href="#" class="btn btn-dark">Request a Demo</a>
       </div>
 
       <!-- Hamburger Menu Trigger (Mobile only) -->
@@ -121,8 +123,8 @@
     <div class="mobile-menu-overlay" id="mobile-menu" aria-hidden="true">
       <div class="mobile-menu-inner">
         <div class="mobile-menu-header">
-          <a class="brand" href="#" aria-label="Digitally Fit Events home">
-            <img src="dfe-logo.png" alt="Digitally Fit Events logo" class="brand-logo" />
+          <a class="brand" href="#" aria-label="Digitally Fit Awards home">
+            <img src="dfe-logo.png" alt="Digitally Fit Awards logo" class="brand-logo" />
           </a>
           <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">
             <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none"
@@ -136,32 +138,38 @@
         <nav class="mobile-nav" aria-label="Mobile Primary">
           <ul>
             <li style="--i: 1;"><a href="#" class="mobile-nav-link is-active">Home</a></li>
-            <li style="--i: 2;"><a href="#" class="mobile-nav-link">Events</a></li>
-            <li style="--i: 3;"><a href="#" class="mobile-nav-link">Organizers</a></li>
-            <li style="--i: 4;"><a href="#" class="mobile-nav-link">Pricing</a></li>
+            <li style="--i: 2;"><a href="#features" class="mobile-nav-link">Features</a></li>
+            <li style="--i: 3;"><a href="#how-it-works" class="mobile-nav-link">How It Works</a></li>
+            <li style="--i: 4;"><a href="#pricing" class="mobile-nav-link">Pricing</a></li>
             <li style="--i: 5;"><a href="#" class="mobile-nav-link">Contact</a></li>
           </ul>
         </nav>
 
         <div class="mobile-menu-footer">
-          <a href="#" class="btn btn-ghost" style="--i: 6;">Log in</a>
-          <a href="#" class="btn btn-dark" style="--i: 7;">Create Event</a>
+          <a href="#" class="btn btn-ghost" style="--i: 6;">Request a Quote</a>
+          <a href="#" class="btn btn-dark" style="--i: 7;">Request a Demo</a>
         </div>
       </div>
     </div>
 
     <!-- ===================== Hero ===================== -->
     <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-badge">
+        <span class="badge-dot" aria-hidden="true"></span>
+        Africa's #1 Voting & Awards Management Platform
+      </div>
+
       <h1 id="hero-title" class="hero-title">
-        CREATE. PROMOTE. SELL<br />#DIGITALLYFITEVENTS
+        RUN YOUR AWARDS.<br />END-TO-END.
+        <span class="title-accent">#DIGITALLYFITAWARDS</span>
       </h1>
 
-      <p class="hero-subtitle">Create events, sell tickets and promote concerts, festivals, workshops and experiences
-        across Africa, all from one platform.</p>
+      <p class="hero-subtitle">Manage nominations, run multi-channel voting, sell tickets, and announce winners —
+        all from one awards platform purpose-built for Africa.</p>
 
       <div class="hero-ctas">
         <a href="#" class="cta-primary">
-          <span>Start Selling Tickets</span>
+          <span>Launch Your Awards</span>
           <span class="cta-arrow" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="14" height="14">
               <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"
@@ -170,7 +178,7 @@
           </span>
         </a>
         <a href="#" class="cta-secondary">
-          <span>Explore Events</span>
+          <span>See a Demo</span>
           <span class="cta-arrow" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="14" height="14">
               <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"
@@ -182,7 +190,7 @@
     </section>
 
     <!-- ===================== Product Screenshot ===================== -->
-    <figure class="product-shot" aria-label="Event organizer dashboard preview">
+    <figure class="product-shot" aria-label="Awards management dashboard preview">
       <div class="browser-frame">
         <div class="browser-header">
           <div class="browser-dots">
@@ -190,18 +198,18 @@
             <span class="dot yellow"></span>
             <span class="dot green"></span>
           </div>
-          <div class="browser-address">organizer.digitallyfitevents.com</div>
+          <div class="browser-address">organizer.digitallyfitawards.com</div>
         </div>
-        <img src="page.PNG" alt="Screenshot of the Digitally Fit Events organizer dashboard" class="product-shot-img"
+        <img src="page.PNG" alt="Screenshot of the Digitally Fit Awards organizer dashboard" class="product-shot-img"
           loading="lazy" decoding="async" />
       </div>
     </figure>
 
     <!-- ===================== Trusted By ===================== -->
-    <section class="sp-section" aria-label="Trusted by leading companies">
+    <section class="sp-section" aria-label="Trusted by leading organisations">
       <p class="sp-heading">
         Trusted by experts.
-        <strong>Used by the leaders.</strong>
+        <strong>Used by Africa's leading awards.</strong>
       </p>
       <div class="sp-track-wrap">
         <div class="sp-track" id="sp-track">
@@ -214,32 +222,76 @@
     <section class="stats-section">
       <div class="stats-grid">
         <div class="stat-card">
-          <div class="stat-value">500K+</div>
-          <div class="stat-label">Tickets Sold</div>
+          <div class="stat-value">1M+</div>
+          <div class="stat-label">Votes Cast</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">10K+</div>
-          <div class="stat-label">Events Hosted</div>
+          <div class="stat-value">50K+</div>
+          <div class="stat-label">Nominees Managed</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">50+</div>
-          <div class="stat-label">African Cities</div>
+          <div class="stat-value">200+</div>
+          <div class="stat-label">Awards Programs</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">24/7</div>
-          <div class="stat-label">Organizer Support</div>
+          <div class="stat-value">95</div>
+          <div class="stat-label">Categories Supported</div>
         </div>
       </div>
     </section>
 
     <!-- ===================== Features ===================== -->
     <section class="features" id="features">
-      <span class="section-eyebrow">Powerful Features</span>
-      <h2 class="section-title">Everything you need to<br />sell out your next event</h2>
-      <p class="section-subtitle">Our comprehensive suite of tools helps you create, promote, and manage events across
-        Africa with ease.</p>
+      <span class="section-eyebrow">Powerful Platform</span>
+      <h2 class="section-title">Everything you need to run<br />a world-class awards program</h2>
+      <p class="section-subtitle">From nominations to winner announcements, our 14-module platform handles every step
+        of your awards lifecycle — built for African audiences and payment methods.</p>
 
       <div class="features-grid">
+        <!-- Feature 1: Smart Nominations -->
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <h3 class="feature-title">Smart Nominations</h3>
+          <p class="feature-description">Public nomination forms, bulk approve/reject workflows, nominee transfers
+            between categories, and Excel exports — all managed from one dashboard.</p>
+          <a href="#" class="feature-link">
+            Learn more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Feature 2: Multi-Channel Voting -->
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+          </div>
+          <h3 class="feature-title">Multi-Channel Voting</h3>
+          <p class="feature-description">Pay-to-vote via M-Pesa STK, Paystack (card/bank), USSD shortcode
+            <strong>*657*65#</strong>, and PawaPay. Real-time results with fraud detection and full audit logs.</p>
+          <a href="#" class="feature-link">
+            Learn more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Feature 3: Awards Ticketing -->
         <div class="feature-card">
           <div class="feature-icon-box">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -248,9 +300,9 @@
               <line x1="7" y1="7" x2="7.01" y2="7" />
             </svg>
           </div>
-          <h3 class="feature-title">Smart Ticketing</h3>
-          <p class="feature-description">Sell multiple ticket tiers, offer early-bird discounts, and process payments
-            securely in local currencies.</p>
+          <h3 class="feature-title">Awards Ticketing</h3>
+          <p class="feature-description">Multiple ticket tiers with promo codes, QR code check-in, ticket transfers,
+            and refunds. PDF tickets delivered via email — ready for your gala night.</p>
           <a href="#" class="feature-link">
             Learn more
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -260,17 +312,18 @@
           </a>
         </div>
 
+        <!-- Feature 4: Financial Engine -->
         <div class="feature-card">
           <div class="feature-icon-box">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">
-              <path
-                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              <line x1="12" y1="1" x2="12" y2="23" />
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
             </svg>
           </div>
-          <h3 class="feature-title">Global Promotion</h3>
-          <p class="feature-description">Automatically promote your event across social media platforms and to our
-            growing community of event-goers.</p>
+          <h3 class="feature-title">Financial Engine</h3>
+          <p class="feature-description">Automatic platform/client revenue splits via Paystack subaccounts. Commission
+            tracking, invoicing, and payout workflows from pending to completed — all in one ledger.</p>
           <a href="#" class="feature-link">
             Learn more
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -280,19 +333,83 @@
           </a>
         </div>
 
+        <!-- Feature 5: Communications Suite -->
         <div class="feature-card">
           <div class="feature-icon-box">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">
-              <path
-                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+            </svg>
+          </div>
+          <h3 class="feature-title">Communications Suite</h3>
+          <p class="feature-description">Email and SMS templates with variable substitution. Schedule blasts to nominees,
+            voters, and attendees. Full delivery tracking and exportable logs.</p>
+          <a href="#" class="feature-link">
+            Learn more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Feature 6: Polls & Engagement -->
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <line x1="3" y1="9" x2="21" y2="9" />
+              <line x1="9" y1="21" x2="9" y2="9" />
+            </svg>
+          </div>
+          <h3 class="feature-title">Polls & Engagement</h3>
+          <p class="feature-description">Run live polls during your awards — multiple or single choice. Real-time response
+            analytics, reset and duplicate polls, and exportable results.</p>
+          <a href="#" class="feature-link">
+            Learn more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Feature 7: Reports & Analytics -->
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
               <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
               <line x1="12" y1="22.08" x2="12" y2="12" />
             </svg>
           </div>
-          <h3 class="feature-title">Real-time Analytics</h3>
-          <p class="feature-description">Track ticket sales, monitor attendee check-ins, and gain insights into your
-            marketing performance.</p>
+          <h3 class="feature-title">Reports & Analytics</h3>
+          <p class="feature-description">Centralised reports hub linking every data stream — voting results, ticket sales,
+            attendee check-ins, revenue, and notification logs. All exportable to Excel, PDF, and CSV.</p>
+          <a href="#" class="feature-link">
+            Learn more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Feature 8: Multi-Tenant Dashboards -->
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg>
+          </div>
+          <h3 class="feature-title">Multi-Tenant Dashboards</h3>
+          <p class="feature-description">Each awards organizer gets a scoped client dashboard. They see only their events,
+            revenue, and voting data. Role-based access with 2FA and full audit trails.</p>
           <a href="#" class="feature-link">
             Learn more
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -304,12 +421,142 @@
       </div>
     </section>
 
+    <!-- ===================== Voting Channels Showcase ===================== -->
+    <section class="voting-channels" id="voting-channels">
+      <span class="section-eyebrow">Voting Channels</span>
+      <h2 class="section-title">Collect votes from every<br />corner of Africa</h2>
+      <p class="section-subtitle">Your audience can vote through USSD, mobile money, or card — no internet required.
+        We handle all the payment gateways so you don't have to.</p>
+
+      <div class="channels-grid">
+        <div class="channel-card">
+          <div class="channel-icon channel-ussd">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+              <line x1="12" y1="18" x2="12.01" y2="18" />
+            </svg>
+          </div>
+          <h3 class="channel-title">USSD Voting</h3>
+          <p class="channel-desc">Dial <strong>*657*65#</strong> or nominee-specific <strong>*657*65*{code}#</strong>
+            — works on any phone, no internet needed.</p>
+          <span class="channel-badge">No Internet Required</span>
+        </div>
+
+        <div class="channel-card">
+          <div class="channel-icon channel-mpesa">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+            </svg>
+          </div>
+          <h3 class="channel-title">M-Pesa STK Push</h3>
+          <p class="channel-desc">Instant M-Pesa payment prompt on your voter's phone. One-tap payment for vote bundles
+            — the most popular channel in East Africa.</p>
+          <span class="channel-badge">Most Popular</span>
+        </div>
+
+        <div class="channel-card">
+          <div class="channel-icon channel-paystack">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+              <line x1="1" y1="10" x2="23" y2="10" />
+            </svg>
+          </div>
+          <h3 class="channel-title">Card & Bank (Paystack)</h3>
+          <p class="channel-desc">Visa, Mastercard, bank transfer, and USSD payments via Paystack. Secure checkout with
+            automatic receipt delivery.</p>
+          <span class="channel-badge">Global Reach</span>
+        </div>
+
+        <div class="channel-card">
+          <div class="channel-icon channel-pawa">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+          </div>
+          <h3 class="channel-title">PawaPay & InstaSend</h3>
+          <p class="channel-desc">Pan-African mobile money support through PawaPay and InstaSend gateways — reach voters
+            in every region with local payment methods.</p>
+          <span class="channel-badge">Pan-African</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Awards Lifecycle (How it works) ===================== -->
+    <section class="lifecycle-section" id="how-it-works">
+      <span class="section-eyebrow">Awards Lifecycle</span>
+      <h2 class="section-title">From concept to winner<br />announcement in 4 phases</h2>
+      <p class="section-subtitle">Our platform mirrors the natural awards journey — set up, nominate, vote, and celebrate.
+        You control every phase from a single dashboard.</p>
+
+      <div class="lifecycle-grid">
+        <div class="lifecycle-card">
+          <div class="lifecycle-number">1</div>
+          <div class="lifecycle-phase">Set Up</div>
+          <h3 class="lifecycle-title">Build Your Awards</h3>
+          <p class="lifecycle-desc">Create categories and sub-categories, add judges and speakers, upload sponsor logos,
+            build the event agenda, and design your public microsite — all in one place.</p>
+          <ul class="lifecycle-features">
+            <li>Unlimited categories & sponsors</li>
+            <li>Speaker & judge profiles</li>
+            <li>Photo & video galleries</li>
+            <li>Custom event page builder</li>
+          </ul>
+        </div>
+
+        <div class="lifecycle-card">
+          <div class="lifecycle-number">2</div>
+          <div class="lifecycle-phase">Nominate</div>
+          <h3 class="lifecycle-title">Open Nominations</h3>
+          <p class="lifecycle-desc">Launch public nomination forms, review and approve nominees, bulk-manage entries,
+            and promote finalists into voting categories with a single click.</p>
+          <ul class="lifecycle-features">
+            <li>Public nomination forms per category</li>
+            <li>Approve, reject, or bulk-manage</li>
+            <li>Transfer nominees between categories</li>
+            <li>Export nominee phonebook for SMS</li>
+          </ul>
+        </div>
+
+        <div class="lifecycle-card">
+          <div class="lifecycle-number">3</div>
+          <div class="lifecycle-phase">Vote</div>
+          <h3 class="lifecycle-title">Run the Vote</h3>
+          <p class="lifecycle-desc">Open voting across multiple channels — USSD, M-Pesa, Paystack, and PawaPay. Track live
+            results, detect fraud, and reconcile payments automatically.</p>
+          <ul class="lifecycle-features">
+            <li>Pay-to-vote bundles & USSD shortcodes</li>
+            <li>Real-time results dashboard</li>
+            <li>Fraud detection & vote invalidation</li>
+            <li>Full audit logs on every vote</li>
+          </ul>
+        </div>
+
+        <div class="lifecycle-card">
+          <div class="lifecycle-number">4</div>
+          <div class="lifecycle-phase">Celebrate</div>
+          <h3 class="lifecycle-title">Announce Winners</h3>
+          <p class="lifecycle-desc">Calculate final results, mark winners per category, sell gala tickets, scan check-ins
+            at the door, and announce winners live — all powered by your DFE dashboard.</p>
+          <ul class="lifecycle-features">
+            <li>Winner announcement engine</li>
+            <li>Gala ticket sales & QR check-in</li>
+            <li>Results export to Excel & PDF</li>
+            <li>Post-event attendee reports</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- ===================== Integrations ===================== -->
     <section class="integrations" id="integrations">
       <span class="section-eyebrow">Integrations</span>
-      <h2 class="section-title">Seamlessly connect with<br />the tools you love</h2>
-      <p class="section-subtitle">Connect your favorite marketing, payment, and streaming tools to automate your event
-        workflow.</p>
+      <h2 class="section-title">Seamlessly connect with<br />the tools you rely on</h2>
+      <p class="section-subtitle">Our payment gateways, communication tools, and platform integrations work together
+        to automate your entire awards workflow.</p>
 
       <div class="diagram" id="diagram">
         <div class="hub" id="hub">
@@ -320,40 +567,27 @@
           </svg>
         </div>
 
-        <div class="icon-card card-tl" title="Stripe">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="#635bff">
-            <path
-              d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C4.576 23.082 7.501 24 10.9 24c2.616 0 4.729-.596 6.28-1.724 1.618-1.188 2.452-2.992 2.452-5.29 0-4.11-2.508-5.842-5.656-7.836z" />
+        <div class="icon-card card-tl" title="Paystack">
+          <img src="paystack.svg" alt="Paystack" width="32" height="32" />
+        </div>
+        <div class="icon-card card-ml" title="M-Pesa">
+          <img src="mpesa.png" alt="M-Pesa" width="36" height="36" />
+        </div>
+        <div class="icon-card card-bl" title="PawaPay">
+          <img src="pawapay.png" alt="PawaPay" width="32" height="32" />
+        </div>
+        <div class="icon-card card-tr" title="InstaSend">
+          <img src="instasend.png" alt="InstaSend" width="36" height="36" />
+        </div>
+        <div class="icon-card card-mr" title="SMS Gateway">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
           </svg>
         </div>
-        <div class="icon-card card-ml" title="Zoom">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="#2D8CFF">
-            <path
-              d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm6.5 15.5l-2.5-1.5V11l2.5-1.5s.5-.3.5.5v5s0 .8-.5.5zm-4-5.5v4c0 .6-.4 1-1 1h-6c-.6 0-1-.4-1-1v-4c0-.6.4-1 1-1h6c.6 0 1 .4 1 1z" />
-          </svg>
-        </div>
-        <div class="icon-card card-bl" title="Google Calendar">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="#4285F4">
-            <path
-              d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z" />
-          </svg>
-        </div>
-        <div class="icon-card card-tr" title="Mailchimp">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFE01B">
-            <path
-              d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6z" />
-          </svg>
-        </div>
-        <div class="icon-card card-mr" title="TikTok">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.02-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.59-1.01V15.5c0 1.56-.47 3.12-1.35 4.41-1.61 2.37-4.45 3.61-7.23 3.1-2.77-.51-5.06-2.7-5.59-5.46-.53-2.77.58-5.69 2.82-7.35 1.58-1.17 3.56-1.64 5.51-1.35V12.8c-.59-.26-1.28-.35-1.91-.25-.63.1-1.23.39-1.7.83-.8.74-1.1 1.88-.8 2.92.3.9 1.05 1.65 1.95 1.95.74.24 1.56.2 2.27-.12.56-.25.99-.7 1.25-1.25.17-.37.25-.78.25-1.18V.02z" />
-          </svg>
-        </div>
-        <div class="icon-card card-br" title="WhatsApp">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="#25D366">
-            <path
-              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.004 20c-1.42 0-2.81-.383-4.016-1.106L5 19.828l.946-2.887a8.031 8.031 0 0 1-1.218-4.254c0-4.437 3.612-8.049 8.053-8.049 2.152 0 4.175.837 5.7 2.358 1.52 1.52 2.355 3.54 2.355 5.69 0 4.439-3.614 8.051-8.053 8.051h.001z" />
+        <div class="icon-card card-br" title="Email">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
           </svg>
         </div>
 
@@ -361,48 +595,47 @@
       </div>
 
       <div class="integrations-list">
-        <div class="int-item"><span class="int-dot"></span>Stripe</div>
-        <div class="int-item"><span class="int-dot"></span>Zoom</div>
-        <div class="int-item"><span class="int-dot"></span>Google Calendar</div>
-        <div class="int-item"><span class="int-dot"></span>Mailchimp</div>
-        <div class="int-item"><span class="int-dot"></span>TikTok</div>
+        <div class="int-item"><span class="int-dot"></span>Paystack</div>
+        <div class="int-item"><span class="int-dot"></span>M-Pesa STK Push</div>
+        <div class="int-item"><span class="int-dot"></span>PawaPay</div>
+        <div class="int-item"><span class="int-dot"></span>InstaSend</div>
+        <div class="int-item"><span class="int-dot"></span>SMS Gateway</div>
         <div class="int-item"><span class="int-dot"></span>and 50+ more</div>
       </div>
     </section>
 
-    <!-- ===================== Steps Section (How it works) ===================== -->
-    <section class="steps-section" id="how-it-works">
-      <span class="section-eyebrow">Onboarding</span>
-      <h2 class="section-title">Get your event live in<br />3 simple steps</h2>
-      <p class="section-subtitle">Our seamless onboarding process ensures you're selling tickets in record time.</p>
+    <!-- ===================== Public Microsite Preview ===================== -->
+    <section class="microsite-section" id="microsite">
+      <span class="section-eyebrow">Public Microsite</span>
+      <h2 class="section-title">Every awards program gets a<br />beautiful public-facing site</h2>
+      <p class="section-subtitle">Your nominees, voters, and attendees experience a fully branded microsite with
+        nominations, voting, ticketing, galleries, and more — no coding required.</p>
 
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-number">1</div>
-          <h3 class="step-title">List Your Event</h3>
-          <p class="step-description">Set up your event details, ticket tiers, and beautiful event pages in minutes.</p>
+      <figure class="microsite-preview" aria-label="Awards public microsite preview">
+        <div class="browser-frame microsite-frame">
+          <div class="browser-header">
+            <div class="browser-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="browser-address">your-awards.digitallyfitawards.com</div>
+          </div>
+          <img src="dashboard.png" alt="Screenshot of the awards public microsite with nominations, voting, ticketing, and galleries" class="product-shot-img" loading="lazy" decoding="async" />
         </div>
-        <div class="step-card">
-          <div class="step-number">2</div>
-          <h3 class="step-title">Spread the Word</h3>
-          <p class="step-description">Use our promotion tools to reach your audience on social media and beyond.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-number">3</div>
-          <h3 class="step-title">Scan & Manage</h3>
-          <p class="step-description">Use our mobile app to scan QR codes and manage check-ins at the door.</p>
-        </div>
-      </div>
+        <p class="microsite-caption">15+ built-in page types — Home, Nominees, Vote, Tickets, Polls, Gallery, Blog,
+          Sponsors, FAQ, About, Contact, and more. All white-label with your branding.</p>
+      </figure>
     </section>
 
     <!-- ===================== Testimonials ===================== -->
     <section class="testimonials" id="testimonials">
       <span class="section-eyebrow">Social Proof</span>
-      <h2 class="section-title">What Event Organizers<br />Are Saying</h2>
-      <p class="section-subtitle">Hear from organizers who've scaled their events with Digitally Fit Events.</p>
+      <h2 class="section-title">What Awards Organizers<br />Are Saying</h2>
+      <p class="section-subtitle">Hear from organizers who run successful awards programs with Digitally Fit Awards.</p>
 
       <div class="testimonials-grid">
-        <!-- Card 1 — David -->
+        <!-- Card 1 — Awards Director -->
         <div class="testimonial-card">
           <div class="testimonial-stars" aria-label="5 out of 5 stars">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b">
@@ -421,22 +654,22 @@
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
             </svg>
           </div>
-          <p class="quote-text">"DFE has been a game-changer for our music festivals. The automated promotion and
-            seamless ticketing have significantly increased our reach across Africa."</p>
+          <p class="quote-text">"Running the Africa AI Future Awards with 95 categories and 1,100+ nominees would've been
+            chaos without DFE. The nominations workflow and multi-channel voting saved us months of manual work."</p>
           <div class="testimonial-author">
             <div class="author-avatar" style="padding:0;overflow:hidden;">
-              <img src="avatar_frank.png" alt="David"
+              <img src="avatar_frank.png" alt="James"
                 style="width:100%;height:100%;object-fit:cover;border-radius:12px;"
-                onerror="this.parentElement.textContent='D';this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.parentElement.style.background='linear-gradient(135deg,#ff7f00,#ff9f40)';this.parentElement.style.color='#fff';this.parentElement.style.fontSize='17px';this.parentElement.style.fontWeight='700';" />
+                onerror="this.parentElement.textContent='J';this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.parentElement.style.background='linear-gradient(135deg,#7c3aed,#a78bfa)';this.parentElement.style.color='#fff';this.parentElement.style.fontSize='17px';this.parentElement.style.fontWeight='700';" />
             </div>
             <div>
-              <div class="author-name">David K.</div>
-              <div class="author-role">Festival Director, AfroBeat Fest</div>
+              <div class="author-name">James K.</div>
+              <div class="author-role">Awards Director, Africa AI Future Awards</div>
             </div>
           </div>
         </div>
 
-        <!-- Card 2 — Sarah -->
+        <!-- Card 2 — Event Producer -->
         <div class="testimonial-card">
           <div class="testimonial-stars" aria-label="5 out of 5 stars">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b">
@@ -455,22 +688,22 @@
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
             </svg>
           </div>
-          <p class="quote-text">"As a fitness coach, I needed a simple way to manage workshop bookings. DFE made it
-            incredibly easy to set up and track every attendee."</p>
+          <p class="quote-text">"The USSD voting channel was a game-changer. Over 60% of our votes came through *657*65#
+            — voters didn't need smartphones or internet. The audit logs gave our sponsors complete confidence."</p>
           <div class="testimonial-author">
             <div class="author-avatar" style="padding:0;overflow:hidden;background:#0056b3;">
-              <img src="avatar_fredrick.png" alt="Sarah"
+              <img src="avatar_fredrick.png" alt="Amina"
                 style="width:100%;height:100%;object-fit:cover;border-radius:12px;"
-                onerror="this.parentElement.textContent='S';this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.parentElement.style.color='#fff';this.parentElement.style.fontSize='17px';this.parentElement.style.fontWeight='700';" />
+                onerror="this.parentElement.textContent='A';this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.parentElement.style.color='#fff';this.parentElement.style.fontSize='17px';this.parentElement.style.fontWeight='700';" />
             </div>
             <div>
-              <div class="author-name">Sarah M.</div>
-              <div class="author-role">Founder, FitLife Workshops</div>
+              <div class="author-name">Amina W.</div>
+              <div class="author-role">Producer, Kenya Arts & Culture Awards</div>
             </div>
           </div>
         </div>
 
-        <!-- Card 3 — Michael -->
+        <!-- Card 3 — Tech Awards CEO -->
         <div class="testimonial-card">
           <div class="testimonial-stars" aria-label="5 out of 5 stars">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b">
@@ -489,17 +722,17 @@
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
             </svg>
           </div>
-          <p class="quote-text">"The real-time analytics help us make better marketing decisions on the fly. We've seen
-            a 30% increase in ticket sales since switching to DFE."</p>
+          <p class="quote-text">"The financial engine is brilliant — automatic revenue splits, instant commission tracking,
+            and one-click payouts. We ran our entire tech awards gala with 500 attendees and QR check-in — flawless."</p>
           <div class="testimonial-author">
-            <div class="author-avatar" style="padding:0;overflow:hidden;background:#ff7f00;">
-              <img src="avatar_sarah.png" alt="Michael"
+            <div class="author-avatar" style="padding:0;overflow:hidden;background:#059669;">
+              <img src="avatar_sarah.png" alt="David"
                 style="width:100%;height:100%;object-fit:cover;border-radius:12px;"
-                onerror="this.parentElement.textContent='M';this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.parentElement.style.color='#fff';this.parentElement.style.fontSize='17px';this.parentElement.style.fontWeight='700';" />
+                onerror="this.parentElement.textContent='D';this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.parentElement.style.color='#fff';this.parentElement.style.fontSize='17px';this.parentElement.style.fontWeight='700';" />
             </div>
             <div>
-              <div class="author-name">Michael O.</div>
-              <div class="author-role">Operations, CinemaHub Africa</div>
+              <div class="author-name">David O.</div>
+              <div class="author-role">CEO, Pan-African Tech Excellence Awards</div>
             </div>
           </div>
         </div>
@@ -513,7 +746,7 @@
           <div class="proof-av"><img src="proof_av_a.png" alt="Organizer A" /></div>
           <div class="proof-av"><img src="proof_av_k.png" alt="Organizer K" /></div>
         </div>
-        <p class="proof-label">Trusted by <strong>10,000+ Organizers</strong> worldwide</p>
+        <p class="proof-label">Trusted by <strong>200+ Awards Organizers</strong> across Africa</p>
         <div class="proof-sep"></div>
         <div class="proof-score">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="#f59e0b">
@@ -527,11 +760,11 @@
     <!-- ===================== Pricing ===================== -->
     <section class="pricing" id="pricing">
       <span class="section-eyebrow">Pricing</span>
-      <h2 class="section-title">Transparent Pricing for All</h2>
-      <p class="section-subtitle">We only succeed when you do. Choose the plan that fits your event scale.</p>
+      <h2 class="section-title">Transparent Pricing for<br />Awards of Every Scale</h2>
+      <p class="section-subtitle">We only succeed when your awards succeed. Choose the plan that fits your program.</p>
 
       <div class="pricing-toggle">
-        <button class="toggle-btn active" id="monthly-btn">One-Time</button>
+        <button class="toggle-btn active" id="monthly-btn">Per-Event</button>
         <button class="toggle-btn" id="annual-btn">Subscription</button>
       </div>
 
@@ -541,52 +774,69 @@
           <h3 class="plan-name">Standard Plan</h3>
           <div class="price-box">
             <span class="price-amount" id="hotspot-price">3.5%</span>
-            <span class="price-label">+$0.50 per ticket</span>
+            <span class="price-label">+$0.50 per transaction</span>
           </div>
+          <p style="font-size:13px;color:#64748b;margin-top:-16px;margin-bottom:20px;">Covers ticket sales & vote bundles</p>
           <ul class="pricing-features">
             <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
                 stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="20 6 9 17 4 12" />
-              </svg> Unlimited Events</li>
+              </svg> Unlimited Categories & Nominees</li>
             <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
                 stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="20 6 9 17 4 12" />
-              </svg> Multi-currency Support</li>
+              </svg> All Voting Channels (incl. USSD)</li>
             <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
                 stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="20 6 9 17 4 12" />
-              </svg> QR Code Check-ins</li>
+              </svg> QR Code Ticketing & Check-in</li>
             <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
                 stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="20 6 9 17 4 12" />
-              </svg> Basic Analytics</li>
+              </svg> Public Microsite with Branding</li>
+            <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg> Email & SMS Communications</li>
+            <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg> Real-time Analytics & Reports</li>
           </ul>
-          <a href="#" class="btn btn-dark" style="width: 100%;">Create Event Free</a>
+          <a href="#" class="btn btn-dark" style="width: 100%;">Launch Your Awards Free</a>
         </div>
 
         <div class="pricing-card">
           <h3 class="plan-name">Enterprise</h3>
           <div class="price-box">
             <span class="price-amount" id="pppoe-price">Custom</span>
-            <span class="price-label" id="pppoe-label">for large festivals</span>
+            <span class="price-label" id="pppoe-label">for large-scale awards</span>
           </div>
           <ul class="pricing-features">
             <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
                 stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="20 6 9 17 4 12" />
-              </svg> Dedicated Manager</li>
+              </svg> Everything in Standard</li>
             <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
                 stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="20 6 9 17 4 12" />
-              </svg> Advanced Reporting</li>
+              </svg> Dedicated Account Manager</li>
             <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
                 stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="20 6 9 17 4 12" />
-              </svg> On-site Support</li>
+              </svg> Custom Revenue Split</li>
             <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
                 stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="20 6 9 17 4 12" />
-              </svg> Custom Domain</li>
+              </svg> On-site Gala Support</li>
+            <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg> Custom Domain & White-Label</li>
+            <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg> Priority API Access</li>
           </ul>
           <a href="#" class="btn btn-ghost" style="width: 100%;">Contact Sales</a>
         </div>
@@ -602,16 +852,16 @@
           <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
           <line x1="12" y1="17" x2="12.01" y2="17" />
         </svg>
-        Your Queries, Simplified
+        Your Questions, Answered
       </div>
       <h2 class="section-title">Questions? Answers!</h2>
-      <p class="section-subtitle">Find quick answers to the most common questions about our platform.</p>
+      <p class="section-subtitle">Find quick answers to the most common questions about our awards platform.</p>
 
       <div class="faq-list">
 
         <div class="faq-item">
           <button class="faq-trigger">
-            <span class="faq-question">How do I get paid for ticket sales?</span>
+            <span class="faq-question">How does the nominations process work?</span>
             <span class="faq-chevron-wrap">
               <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                 stroke-linecap="round" stroke-linejoin="round">
@@ -621,15 +871,16 @@
           </button>
           <div class="faq-content">
             <div class="faq-answer">
-              We settle payments directly to your connected bank account or mobile money wallet. Settlements typically
-              happen within 48 hours after your event concludes.
+              You set up categories and open nominations. The public submits nominees through a branded form. You can
+              approve, reject, or bulk-manage entries, transfer nominees between categories, and export the list to Excel.
+              Once nominations close, promote finalists directly into voting categories with one click.
             </div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-trigger">
-            <span class="faq-question">Can I sell tickets in multiple currencies?</span>
+            <span class="faq-question">What voting channels are available?</span>
             <span class="faq-chevron-wrap">
               <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                 stroke-linecap="round" stroke-linejoin="round">
@@ -639,15 +890,17 @@
           </button>
           <div class="faq-content">
             <div class="faq-answer">
-              Yes! DFE supports multiple African currencies and major global currencies. Attendees can pay using their
-              preferred method, including M-Pesa, Card, and Bank Transfer.
+              We support four payment/voting channels: <strong>USSD</strong> (*657*65# — works on any phone, no internet),
+              <strong>M-Pesa STK Push</strong> (one-tap payment prompt), <strong>Paystack</strong> (card, bank transfer,
+              USSD), and <strong>PawaPay/InstaSend</strong> for pan-African mobile money. You can enable or disable
+              channels per event.
             </div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-trigger">
-            <span class="faq-question">Is there a mobile app for check-ins?</span>
+            <span class="faq-question">How do vote bundles and pricing work?</span>
             <span class="faq-chevron-wrap">
               <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                 stroke-linecap="round" stroke-linejoin="round">
@@ -657,15 +910,16 @@
           </button>
           <div class="faq-content">
             <div class="faq-answer">
-              Absolutely. Our organizer app is available for both iOS and Android. You can scan QR codes, track
-              real-time attendance, and manage entries directly from your smartphone.
+              You configure vote bundles (e.g., 5 votes for KES 50). Voters purchase bundles through any enabled payment
+              channel and cast their votes for nominees. Revenue is automatically split between you and the platform via
+              Paystack subaccounts. You can create multiple bundle tiers and set per-category voting rules.
             </div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-trigger">
-            <span class="faq-question">Can I customize the event page to fit my brand?</span>
+            <span class="faq-question">How do you prevent voting fraud?</span>
             <span class="faq-chevron-wrap">
               <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                 stroke-linecap="round" stroke-linejoin="round">
@@ -675,35 +929,60 @@
           </button>
           <div class="faq-content">
             <div class="faq-answer">
-              Yes! You can white-label your event pages with your own branding, colors, and images. DFE provides a
-              clean, professional canvas for your event to shine.
+              Every vote is tracked with a full audit log — voter identity, timestamp, channel, and amount. Admins can
+              invalidate suspicious votes with one click. Voting codes can be one-time or reusable. Our USSD reconciliation
+              tools ensure every payment is matched to a valid vote. The dashboard flags unusual voting patterns
+              automatically.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span class="faq-question">Can I customise the public site with my branding?</span>
+            <span class="faq-chevron-wrap">
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </button>
+          <div class="faq-content">
+            <div class="faq-answer">
+              Absolutely. Your public microsite is fully white-label — custom domain, branding, colors, cover images, and
+              banners. The site includes 15+ page types: Home, Nominees, Vote, Tickets, Polls, Gallery, Blog, Sponsors,
+              FAQ, About, and Contact. Enterprise clients get complete CSS control.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span class="faq-question">How do payouts and revenue splits work?</span>
+            <span class="faq-chevron-wrap">
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </button>
+          <div class="faq-content">
+            <div class="faq-answer">
+              Revenue from ticket sales and vote bundles is automatically split via Paystack subaccounts. You see your
+              running balance after commission deductions in real time. Payouts follow a workflow — Pending → Approved →
+              Processing → Completed — directly to your bank or mobile money account. Full transaction ledgers are
+              exportable.
             </div>
           </div>
         </div>
 
       </div>
     </section>
-
-    <!-- ===================== Newsletter Section ===================== 
-    <section class="newsletter-section">
-      <div class="newsletter-card">
-        <div class="newsletter-content">
-          <h2 class="newsletter-title">Stay in the loop</h2>
-          <p class="newsletter-text">Join 5,000+ organizers receiving our weekly event management and promotion tips.
-          </p>
-        </div>
-        <form class="newsletter-form" onsubmit="event.preventDefault();">
-          <input type="email" placeholder="Enter your email" required />
-          <button type="submit" class="btn-dark">Subscribe</button>
-        </form>
-      </div>
-    </section>
-    -->
 
     <!-- ===================== CTA Banner ===================== -->
     <section class="cta-banner">
       <div class="cta-card">
-        <!-- ── LEFT COLUMN ── -->
+        <!-- LEFT COLUMN -->
         <div class="left-col">
           <div class="badge">
             <svg viewBox="0 0 24 24" fill="none" stroke="#3a4560" stroke-width="2" stroke-linecap="round"
@@ -713,19 +992,19 @@
               <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
               <path d="M16 3.13a4 4 0 0 1 0 7.75" />
             </svg>
-            Make the switch
+            Trusted by 200+ awards organizers
           </div>
 
-          <h2 class="heading">Why Choose<br>Digitally Fit Events?</h2>
+          <h2 class="heading">Ready to Run Your<br />Best Awards Yet?</h2>
 
           <p class="body-text">
-            Transform your event management with a platform that grows with you. Our transparent model combined with
-            high-end features makes DFE the smart choice for organizers of all sizes.
+            From nominations to winner announcements, Digitally Fit Awards gives you everything you need to run a
+            professional, transparent, and profitable awards program — all from one platform, built for Africa.
           </p>
 
           <div class="btn-row">
             <button class="cta-primary">
-              Get Started – Free
+              Launch Your Awards – Free
               <span class="cta-arrow" aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="14" height="14">
                   <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"
@@ -745,25 +1024,25 @@
           </div>
         </div>
 
-        <!-- ── RIGHT COLUMN — Dashboard card ── -->
+        <!-- RIGHT COLUMN — Dashboard card -->
         <div class="right-col">
           <div class="dashboard-card">
             <!-- Card header -->
             <div class="card-header">
-              <span class="card-title">Balance</span>
+              <span class="card-title">Voting Revenue</span>
               <span class="on-track-badge">
                 <span class="on-track-dot"></span>
-                On track
+                Live
               </span>
             </div>
 
             <!-- Inner stat card with bar chart -->
             <div class="stat-card">
-              <p class="stat-label">Ticket Revenue</p>
-              <p class="stat-value">682.50</p>
+              <p class="stat-label">Votes Cast</p>
+              <p class="stat-value">12,847</p>
               <hr class="dashed-line" />
 
-              <!-- Bar chart — heights reflect the screenshot -->
+              <!-- Bar chart -->
               <div class="bar-chart" id="barChart">
                 <!-- Bars injected by JS -->
               </div>
@@ -777,16 +1056,17 @@
     <footer class="site-footer">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="dfe-logo.png" alt="Digitally Fit Events logo" class="brand-logo" style="margin-bottom: 20px;" />
-          <p class="footer-desc">Empowering event organizers across Africa with smart ticketing and promotion tools.</p>
+          <img src="dfe-logo.png" alt="Digitally Fit Awards logo" class="brand-logo" style="margin-bottom: 20px;" />
+          <p class="footer-desc">The complete awards management platform — empowering organizers across Africa to run
+            nominations, voting, ticketing, and winner announcements from one dashboard.</p>
         </div>
         <div class="footer-col">
           <h4>Platform</h4>
           <ul class="footer-links">
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Promotion</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Features</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#voting-channels">Voting Channels</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -799,32 +1079,24 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Support</h4>
-          <ul class="footer-links">
-            <li><a href="#">Help Center</a></li>
-            <li><a href="#">Documentation</a></li>
-            <li><a href="#">Status</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
           <h4>Social</h4>
           <ul class="footer-links">
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">LinkedIn</a></li>
-            <li><a href="#">Instagram</a></li>
+            <li><a href="https://www.instagram.com/digitallyfitawards/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://x.com/DigitallyFAward" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
+            <li><a href="https://ke.linkedin.com/company/digitally-fit-awards" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 Digitally Fit Events. All rights reserved.</p>
-        <p>Built with ❤️ for Event Organizers</p>
+        <p>© 2026 Digitally Fit Awards. All rights reserved.</p>
+        <p>Built with ❤️ for Awards Organizers</p>
       </div>
     </footer>
   </div>
 
   <!-- ===================== Floating WhatsApp Button ===================== -->
   <div class="wa-float" id="wa-float" role="complementary" aria-label="Chat on WhatsApp">
-    <!-- Tooltip card (shows on hover) -->
+    <!-- Tooltip card -->
     <div class="wa-tooltip" id="wa-tooltip">
       <button class="wa-tooltip-close" id="wa-close" aria-label="Dismiss">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"
@@ -837,12 +1109,14 @@
       <p class="wa-tooltip-sub">We typically reply in minutes</p>
     </div>
     <!-- WhatsApp button -->
-    <a class="wa-btn" href="https://wa.me/254700000000" target="_blank" rel="noopener noreferrer"
+    <a class="wa-btn" href="https://wa.me/254709368488" target="_blank" rel="noopener noreferrer"
       aria-label="Chat on WhatsApp">
-      <!-- Official WhatsApp icon -->
       <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M16.002 2C8.268 2 2 8.268 2 16.002c0 2.477.648 4.8 1.778 6.82L2 30l7.38-1.752A13.94 13.94 0 0 0 16.002 30C23.732 30 30 23.732 30 16.002 30 8.268 23.732 2 16.002 2zm0 25.417a11.36 11.36 0 0 1-5.795-1.586l-.416-.247-4.38 1.04 1.076-4.265-.271-.437A11.365 11.365 0 0 1 4.583 16c0-6.298 5.12-11.418 11.418-11.418S27.42 9.702 27.42 16c0 6.3-5.12 11.418-11.418 11.418zm6.258-8.548c-.343-.172-2.03-1.002-2.345-1.116-.315-.114-.544-.171-.773.172-.229.343-.886 1.116-1.086 1.344-.2.229-.4.257-.742.086-.343-.172-1.449-.534-2.76-1.703-1.02-.91-1.71-2.033-1.91-2.376-.2-.343-.021-.529.15-.7.154-.152.343-.4.514-.6.172-.2.229-.343.343-.572.114-.229.057-.429-.029-.6-.086-.172-.773-1.863-1.059-2.549-.28-.672-.563-.58-.773-.591l-.657-.011c-.229 0-.6.086-.914.429-.315.343-1.2 1.173-1.2 2.863 0 1.69 1.228 3.32 1.4 3.549.171.229 2.42 3.692 5.862 5.177.82.354 1.46.566 1.958.724.823.261 1.572.224 2.164.136.66-.099 2.03-.83 2.317-1.631.286-.8.286-1.486.2-1.63-.085-.142-.314-.228-.657-.4z" />
       </svg>
     </a>
   </div>
+</body>
+
+</html>

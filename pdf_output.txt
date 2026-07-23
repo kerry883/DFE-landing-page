@@ -1,0 +1,146 @@
+=== PAGE 1 ===
+DIGITALLY FIT EVENTS PLATFORM
+Full Feature List
+Everything currently built and live on the Digitally Fit Events platform, by module.
+1. EVENTS MANAGEMENT
+• Multi-event hosting per client, with event phases: Nominations → Voting → Closed
+• Cover image, banner and poster asset uploads
+• Duplicate an existing event (full copy with settings)
+• Categories and sub-categories
+• Venues (name, address, capacity, map link)
+• Speakers with bios, photos, session details
+• Sponsors with logos and tier levels
+• Event schedule / agenda builder
+• Event document uploads (PDFs, programme booklets)
+• FAQs per event
+• Photo gallery with albums, plus video gallery
+• Event registration (attendee sign-up, separate from ticketing)
+• Live event feed with real-time stats
+• Cancel or archive events
+2. NOMINATIONS
+• Public nomination form, per event and per category
+• Nomination groups (e.g. “Tech”, “Creative”)
+• Per-category nomination open/close control
+• Approve, reject, or bulk approve/reject nominees
+• Promote approved nominees into a voting category
+• Close nominations (locks the public form)
+• Export nominee list to Excel, per category
+• Export nominee phonebook (names + numbers) for SMS
+• Nominations Inbox — unified pending-nominee view across events
+
+=== PAGE 2 ===
+• Transfer a nominee between categories
+• Mark a nominee as winner at the nomination stage
+3. VOTING
+• Voting categories, independent of nomination categories
+• Add voting candidates manually or promote from nominees
+• Candidate photo upload with cropping/processing
+• Voting open/close control, per category and globally
+• Vote bundles — pay-to-vote packs (e.g. 5 votes for KES 50)
+• Multi-gateway online voting: Paystack, M-Pesa STK, PawaPay
+• USSD voting via shortcode *657*65# — nominee dial string *657*65*{code}#
+• Globally sequential nominee codes (001, 002, 003…)
+• Voting code generation — one-time or reusable
+• Vote session tracking per voter
+• Invalidate suspicious votes
+• Reconcile USSD pending votes (chunk-by-chunk tool)
+• Calculate results per category
+• Export results to Excel and PDF
+• Announce winners per category; mark individual winners
+• Full voting audit log (voter, time, channel, amount)
+• Vote statistics dashboard — totals, revenue, top candidates
+• Voting results view with percentage breakdowns
+4. TICKETING
+• Multiple ticket types per event (Early Bird, VIP, Regular, etc.)
+• Price, quantity cap, and sale window per ticket type
+• Toggle ticket types on/off without deleting
+• Promo codes — % or fixed discount, usage limits, expiry, per-code analytics
+• Public checkout flow on the frontend
+• QR code generation per ticket
+• PDF ticket generation and email delivery, incl. Tuqio-branded variant
+• Check-in scanning, plus bulk check-in
+• Check-in report (arrival, time, gate)
+• Ticket transfers — buyer-initiated, admin approve/reject
+• Refunds — admin-initiated approve/reject workflow
+• Resend ticket email; void a ticket without refund
+• Export attendee list, check-in report, and sales report to Excel & PDF
+
+=== PAGE 3 ===
+5. PAYMENTS & FINANCIAL
+• Gateways: Paystack (card/bank/USSD), M-Pesa STK Push, PawaPay, InstaSend
+• Paystack split subaccounts — automatic platform/client revenue split
+• Per-event gateway fee calculator (pass to customer or absorb)
+• Finance dashboard — revenue, pending payouts, commissions at a glance
+• Transaction ledger with filters; export to Excel & PDF
+• Revenue reports per event or date range, broken down by stream
+• Commission tracking per transaction
+• Client balance — running balance after commission deductions
+• Invoicing — create, generate PDF, email, mark paid, line items
+• Payout workflow: Pending → Approved → Processing → Completed
+• Stored payment accounts (bank/mobile money) with primary account flag
+• Platform-level refund tracking — approve, process, fail, complete
+6. COMMUNICATIONS & NOTIFICATIONS
+• Reusable email templates with variable substitution and preview
+• Per-event custom email blasts, with scheduled delivery and resend
+• Full email log — status, recipient, timestamp
+• Reusable SMS templates with preview
+• SMS blasts to event contacts via gateway, with delivery tracking
+• Full SMS log
+• Unified notification log across email + SMS, filterable and exportable
+7. POLLS
+• Polls attached to an event, or fully standalone
+• Multiple-choice or single-choice questions
+• Add, edit, and reorder questions and options; bulk-add options
+• Publish a poll live, or close it to stop responses
+• Reset responses; duplicate a poll for reuse
+• Public poll page on the frontend
+• Response analytics — counts and percentages per option
+• Export poll results to Excel
+• Polls dashboard — all polls across events at a glance
+8. CMS (CONTENT MANAGEMENT)
+• Blog posts — create, edit, publish, feature
+
+=== PAGE 4 ===
+• Blog categories and tags
+• Comment moderation — approve, reject, mark as spam
+• Static pages (About, FAQ, Terms, etc.)
+• Media library — upload, download, delete
+• Public blog listing and single-post pages
+9. CONTACTS & CRM
+• Central contacts list across all of a client's events
+• Auto-backfill from event registrations and ticket purchases
+• Export contacts to Excel
+10. CLIENTS & MULTI-TENANCY
+• Create and manage clients (event organisers)
+• Client dashboard — scoped view of their own events, revenue, votes
+• Client subaccounts on payment gateways (Paystack split)
+• Client balance tracking and payout history
+11. USERS, ROLES & SECURITY
+• User management — invite, edit, suspend admin users
+• Role-based access control
+• Email invitation system for new admin users
+• Two-factor authentication (2FA) on admin login
+• Audit trail — every admin action logged with user, time, detail
+• Activity dashboard — recent platform activity feed
+• Password reset flow
+12. REPORTS HUB
+• Centralised reports hub linking to every report type
+• Voting results, ticket sales, attendee list, check-in report
+• Revenue report and transaction ledger
+• Notification log export
+• All exportable to Excel, PDF, or CSV as appropriate
+13. SETTINGS & CONFIGURATION
+• Platform-wide system settings
+• Payment gateway settings — API keys per gateway
+
+=== PAGE 5 ===
+• Per-event voting and ticketing settings
+• SMS/email gateway configuration
+14. PUBLIC FRONTEND (STANDARD MICROSITE)
+• Home, Events, Event Detail, Nominees, Nominee Profile
+• Nominate, Vote, Vote Bundle, Vote Success
+• Tickets, Ticket Checkout, Ticket Confirmation
+• Polls, Gallery, Blog, Sponsors, Categories, Groups
+• FAQ, About, Contact, Pricing, Become an Organiser
+• Floating WhatsApp chat button on every page
+
