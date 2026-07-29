@@ -960,9 +960,54 @@ ul {
   font-size: 14px;
   color: #64748b;
   line-height: 1.7;
-  margin: 0;
-  flex: 1;
+  margin: 0 0 14px;
 }
+
+/* Bullet list inside feature cards */
+.feature-bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.feature-bullets li {
+  font-size: 13px;
+  color: #475569;
+  font-weight: 500;
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.feature-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.45;
+}
+
+/* Tint bullet dots to match each card's accent color */
+.feature-card:nth-child(1) .feature-bullets li { color: #ff7f00; }
+.feature-card:nth-child(1) .feature-bullets li::before { opacity: 0.55; }
+.feature-card:nth-child(2) .feature-bullets li { color: #0ea5e9; }
+.feature-card:nth-child(2) .feature-bullets li::before { opacity: 0.55; }
+.feature-card:nth-child(3) .feature-bullets li { color: #10b981; }
+.feature-card:nth-child(3) .feature-bullets li::before { opacity: 0.55; }
+.feature-card:nth-child(4) .feature-bullets li { color: #7c3aed; }
+.feature-card:nth-child(4) .feature-bullets li::before { opacity: 0.55; }
+.feature-card:nth-child(5) .feature-bullets li { color: #0891b2; }
+.feature-card:nth-child(5) .feature-bullets li::before { opacity: 0.55; }
+.feature-card:nth-child(6) .feature-bullets li { color: #d97706; }
+.feature-card:nth-child(6) .feature-bullets li::before { opacity: 0.55; }
 
 /* Bottom 'learn more' link */
 .feature-link {
