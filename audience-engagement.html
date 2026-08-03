@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Live polls, digital surveys and interactive voting that run in any browser, with real-time results and Excel export." />
+  <title>Audience Engagement — Digitally Fit Awards</title>
+  <link rel="icon" type="image/png" href="logo-favicon.png" />
+  <link rel="apple-touch-icon" href="logo-favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="subpage.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body class="svc svc-audience-engagement">
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Decorative background overlays -->
+  <div class="bg-overlays" aria-hidden="true">
+    <span class="bokeh bokeh-1"></span>
+    <span class="bokeh bokeh-2"></span>
+    <span class="bokeh bokeh-3"></span>
+    <span class="bokeh bokeh-4"></span>
+    <span class="bokeh bokeh-5"></span>
+    <span class="bokeh bokeh-6"></span>
+
+    <!-- Constellation / mesh network SVG -->
+    <svg class="mesh mesh-left" viewBox="0 0 400 400" preserveAspectRatio="none" aria-hidden="true">
+      <g stroke="rgba(100,120,150,0.13)" stroke-width="0.8" fill="none">
+        <path d="M20 60 L120 30 L210 90 L300 50 L380 110" />
+        <path d="M40 200 L130 160 L220 230 L310 190 L380 260" />
+        <path d="M20 340 L110 300 L200 360 L290 320 L380 380" />
+        <path d="M120 30 L130 160 L110 300" />
+        <path d="M210 90 L220 230 L200 360" />
+        <path d="M300 50 L310 190 L290 320" />
+      </g>
+      <g fill="rgba(100,120,150,0.28)">
+        <circle cx="20" cy="60" r="1.6" />
+        <circle cx="120" cy="30" r="1.6" />
+        <circle cx="210" cy="90" r="1.6" />
+        <circle cx="300" cy="50" r="1.6" />
+        <circle cx="380" cy="110" r="1.6" />
+        <circle cx="40" cy="200" r="1.6" />
+        <circle cx="130" cy="160" r="1.6" />
+        <circle cx="220" cy="230" r="1.6" />
+        <circle cx="310" cy="190" r="1.6" />
+        <circle cx="380" cy="260" r="1.6" />
+        <circle cx="20" cy="340" r="1.6" />
+        <circle cx="110" cy="300" r="1.6" />
+        <circle cx="200" cy="360" r="1.6" />
+        <circle cx="290" cy="320" r="1.6" />
+        <circle cx="380" cy="380" r="1.6" />
+      </g>
+    </svg>
+    <svg class="mesh mesh-right" viewBox="0 0 400 400" preserveAspectRatio="none" aria-hidden="true">
+      <g stroke="rgba(100,120,150,0.13)" stroke-width="0.8" fill="none">
+        <path d="M30 40 L110 90 L210 40 L300 110 L380 60" />
+        <path d="M30 180 L120 140 L220 200 L300 150 L380 220" />
+        <path d="M30 330 L120 290 L210 350 L310 300 L380 360" />
+        <path d="M110 90 L120 140 L120 290" />
+        <path d="M210 40 L220 200 L210 350" />
+        <path d="M300 110 L300 150 L310 300" />
+      </g>
+      <g fill="rgba(100,120,150,0.28)">
+        <circle cx="30" cy="40" r="1.6" />
+        <circle cx="110" cy="90" r="1.6" />
+        <circle cx="210" cy="40" r="1.6" />
+        <circle cx="300" cy="110" r="1.6" />
+        <circle cx="380" cy="60" r="1.6" />
+        <circle cx="30" cy="180" r="1.6" />
+        <circle cx="120" cy="140" r="1.6" />
+        <circle cx="220" cy="200" r="1.6" />
+        <circle cx="300" cy="150" r="1.6" />
+        <circle cx="380" cy="220" r="1.6" />
+        <circle cx="30" cy="330" r="1.6" />
+        <circle cx="120" cy="290" r="1.6" />
+        <circle cx="210" cy="350" r="1.6" />
+        <circle cx="310" cy="300" r="1.6" />
+        <circle cx="380" cy="360" r="1.6" />
+      </g>
+    </svg>
+
+    <!-- Decorative sparkle -->
+    <svg class="sparkle" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 2 L13.8 9.5 L21 12 L13.8 14.5 L12 22 L10.2 14.5 L3 12 L10.2 9.5 Z" fill="rgba(100,120,160,0.35)" />
+    </svg>
+  </div>
+
+  <div class="page">
+    <!-- ===================== Header ===================== -->
+    <header class="site-header" role="banner">
+      <a class="brand" href="index.html" aria-label="Digitally Fit Awards home">
+        <img src="dfe-logo.png" alt="Digitally Fit Awards logo" class="brand-logo" />
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item-dropdown">
+            <button type="button" class="nav-link nav-dropdown-toggle is-active" id="services-toggle"
+              aria-expanded="false" aria-controls="services-menu" aria-haspopup="true">
+              Features
+              <svg class="nav-caret" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+
+            <div class="nav-dropdown-menu" id="services-menu" aria-labelledby="services-toggle">
+              <div class="nav-dd-grid">
+                <a class="nav-dd-item to-event-management" href="event-management.html">
+                  <span class="nav-dd-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                  </span>
+                  <span class="nav-dd-body">
+                    <span class="nav-dd-name">Event Management</span>
+                    <span class="nav-dd-desc">Planning, registration and check-in</span>
+                  </span>
+                </a>
+
+                <a class="nav-dd-item to-digital-ticketing" href="digital-ticketing.html">
+                  <span class="nav-dd-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+                      <line x1="7" y1="7" x2="7.01" y2="7" />
+                    </svg>
+                  </span>
+                  <span class="nav-dd-body">
+                    <span class="nav-dd-name">Digital Ticketing</span>
+                    <span class="nav-dd-desc">QR tickets, checkout and entry</span>
+                  </span>
+                </a>
+
+                <a class="nav-dd-item to-awards-management" href="awards-management.html">
+                  <span class="nav-dd-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <circle cx="12" cy="8" r="7" />
+                      <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+                    </svg>
+                  </span>
+                  <span class="nav-dd-body">
+                    <span class="nav-dd-name">Awards Management</span>
+                    <span class="nav-dd-desc">Nominations, voting and winners</span>
+                  </span>
+                </a>
+
+                <a class="nav-dd-item to-branding-marketing" href="branding-marketing.html">
+                  <span class="nav-dd-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                  </span>
+                  <span class="nav-dd-body">
+                    <span class="nav-dd-name">Branding and Marketing</span>
+                    <span class="nav-dd-desc">Microsites, campaigns and reach</span>
+                  </span>
+                </a>
+
+                <a class="nav-dd-item to-audience-engagement is-current" href="audience-engagement.html" aria-current="page">
+                  <span class="nav-dd-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                  </span>
+                  <span class="nav-dd-body">
+                    <span class="nav-dd-name">Audience Engagement</span>
+                    <span class="nav-dd-desc">Live polls, surveys and voting</span>
+                  </span>
+                </a>
+
+                <a class="nav-dd-item to-event-support" href="event-support.html">
+                  <span class="nav-dd-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path
+                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                    </svg>
+                  </span>
+                  <span class="nav-dd-body">
+                    <span class="nav-dd-name">Event Support Service</span>
+                    <span class="nav-dd-desc">Media, sponsors and logistics</span>
+                  </span>
+                </a>
+              </div>
+
+              <a class="nav-dd-all" href="index.html#features">
+                View all platform features
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            </div>
+          </li>
+          <li><a href="index.html#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="index.html#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://wa.me/254709368488" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Request a Quote</a>
+        <a href="https://wa.me/254709368488" target="_blank" rel="noopener noreferrer" class="btn btn-dark">Request a Demo</a>
+      </div>
+
+      <!-- Hamburger Menu Trigger (Mobile only) -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger-bar bar-top"></span>
+        <span class="hamburger-bar bar-middle"></span>
+        <span class="hamburger-bar bar-bottom"></span>
+      </button>
+    </header>
+
+    <!-- ===================== Mobile Overlay Menu ===================== -->
+    <div class="mobile-menu-overlay" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-inner">
+        <div class="mobile-menu-header">
+          <a class="brand" href="index.html" aria-label="Digitally Fit Awards home">
+            <img src="dfe-logo.png" alt="Digitally Fit Awards logo" class="brand-logo" />
+          </a>
+          <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <nav class="mobile-nav" aria-label="Mobile Primary">
+          <ul>
+            <li style="--i: 1;"><a href="index.html" class="mobile-nav-link">Home</a></li>
+            <li style="--i: 2;" class="mobile-nav-group">
+              <button type="button" class="mobile-nav-trigger is-active" id="mobile-services-toggle" aria-expanded="true" aria-controls="mobile-services">
+                Features
+                <svg class="mobile-nav-caret" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <ul class="mobile-subnav is-open" id="mobile-services">
+                <li><a href="event-management.html" class="mobile-subnav-link">Event Management</a></li>
+                <li><a href="digital-ticketing.html" class="mobile-subnav-link">Digital Ticketing</a></li>
+                <li><a href="awards-management.html" class="mobile-subnav-link">Awards Management</a></li>
+                <li><a href="branding-marketing.html" class="mobile-subnav-link">Branding and Marketing</a></li>
+                <li><a href="audience-engagement.html" class="mobile-subnav-link is-current" aria-current="page">Audience Engagement</a></li>
+                <li><a href="event-support.html" class="mobile-subnav-link">Event Support Service</a></li>
+              </ul>
+            </li>
+            <li style="--i: 3;"><a href="index.html#how-it-works" class="mobile-nav-link">How It Works</a></li>
+            <li style="--i: 4;"><a href="index.html#pricing" class="mobile-nav-link">Pricing</a></li>
+            <li style="--i: 5;"><a href="index.html#contact" class="mobile-nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="mobile-menu-footer">
+          <a href="https://wa.me/254709368488" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="--i: 6;">Request a Quote</a>
+          <a href="https://wa.me/254709368488" target="_blank" rel="noopener noreferrer" class="btn btn-dark" style="--i: 7;">Request a Demo</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== Hero ===================== -->
+    <section class="svc-hero" aria-labelledby="svc-title">
+      <div class="svc-hero-glow" aria-hidden="true"></div>
+
+      <div class="svc-hero-copy">
+        <nav class="svc-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <a href="index.html#features">Services</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span aria-current="page">Audience Engagement</span>
+        </nav>
+
+        <span class="svc-eyebrow">Audience Engagement</span>
+
+        <h1 id="svc-title" class="svc-hero-title">
+          Turn a room of watchers into <span class="accent">participants</span>
+        </h1>
+
+        <p class="svc-hero-lead">Live polls, digital surveys and interactive voting that run on any phone in the room.
+          Ask a question from the stage, watch the answers land in real time, and put the result on the screen behind
+          you before the moment passes.</p>
+
+        <div class="svc-hero-ctas">
+          <a href="https://wa.me/254709368488" target="_blank" rel="noopener noreferrer" class="cta-primary svc-cta-accent">
+            <span>Engage Your Audience</span>
+            <span class="cta-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14">
+                <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </a>
+          <a href="#how-it-works" class="cta-secondary">
+            <span>See How It Works</span>
+            <span class="cta-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14">
+                <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="svc-hero-visual" aria-hidden="true">
+        <div class="svc-hero-emblem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+        </div>
+        <span class="svc-orbit svc-orbit-1">Live polls</span>
+        <span class="svc-orbit svc-orbit-2">Instant results</span>
+        <span class="svc-orbit svc-orbit-3">No app to install</span>
+      </div>
+    </section>
+
+    <!-- ===================== Stats ===================== -->
+    <section class="svc-stats stats-section" aria-label="Audience engagement at a glance">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">1M+</div>
+          <div class="stat-label">Responses Handled</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">Real-Time Results</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">2</div>
+          <div class="stat-label">Question Types</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">50K+</div>
+          <div class="stat-label">Participants</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Capabilities ===================== -->
+    <section class="svc-section" id="capabilities">
+      <div class="svc-section-head">
+        <span class="svc-eyebrow">Capabilities</span>
+        <h2 class="section-title">Interaction without the friction</h2>
+        <p class="section-subtitle">Nobody downloads an app for a ten-second poll. Everything here runs in the browser
+          your audience already has open.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="svc-card">
+          <div class="svc-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="20" x2="18" y2="10" />
+              <line x1="12" y1="20" x2="12" y2="4" />
+              <line x1="6" y1="20" x2="6" y2="14" />
+            </svg>
+          </div>
+          <h3 class="svc-card-title">Live Polls</h3>
+          <p class="svc-card-desc">Publish a poll live and results move as votes land. Close it the moment you have
+            your answer, and the room sees the final split on screen.</p>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-4" />
+              <polyline points="9 11 9 3 15 3 15 11" />
+              <line x1="12" y1="15" x2="12" y2="18" />
+            </svg>
+          </div>
+          <h3 class="svc-card-title">Digital Surveys</h3>
+          <p class="svc-card-desc">Multiple-choice or single-choice questions, reordered as you like, with bulk option
+            entry when you are building something long. Public page, no login for respondents.</p>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+            </svg>
+          </div>
+          <h3 class="svc-card-title">Interactive Voting</h3>
+          <p class="svc-card-desc">Audience choice awards, people's favourite, best-dressed — any moment where the
+            room should decide. The same voting engine that runs your main categories.</p>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
+              <path d="M22 12A10 10 0 0 0 12 2v10z" />
+            </svg>
+          </div>
+          <h3 class="svc-card-title">Response Analytics</h3>
+          <p class="svc-card-desc">Counts and percentages per option, updating as responses arrive, with the full
+            result set exportable to Excel when you want it in the post-event report.</p>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="1 4 1 10 7 10" />
+              <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+            </svg>
+          </div>
+          <h3 class="svc-card-title">Reusable Polls</h3>
+          <p class="svc-card-desc">Duplicate a poll for the next session, or reset its responses and run the same
+            questions with a different room. Build the instrument once, use it all year.</p>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+            </svg>
+          </div>
+          <h3 class="svc-card-title">Attached or Standalone</h3>
+          <p class="svc-card-desc">Hang a poll off a specific event, or run it entirely on its own for research and
+            community feedback between events. A single dashboard shows all of them.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Deep dives ===================== -->
+    <section class="svc-deep" aria-label="How audience engagement works in detail">
+
+      <div class="svc-deep-row">
+        <div class="svc-deep-copy">
+          <span class="svc-deep-label">Live Polls</span>
+          <h2 class="svc-deep-title">Ask the room, get the answer on stage</h2>
+          <p class="svc-deep-text">A host asks a question, the audience answers on their phones, and the bar chart
+            fills behind them while they are still talking. Publish the poll live, close it when you have what you
+            need, and the final numbers stay on record.</p>
+          <ul class="svc-deep-list">
+            <li>Publish live, close instantly to stop responses</li>
+            <li>Counts and percentages per option as they arrive</li>
+            <li>Public poll page — no login, no app install</li>
+            <li>Reset responses and run the same poll again</li>
+          </ul>
+        </div>
+
+        <div class="svc-deep-visual">
+          <div class="browser-frame">
+            <div class="browser-header">
+              <div class="browser-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="browser-address">polls / audience-choice</div>
+            </div>
+            <div class="svc-mock">
+              <div class="svc-mock-head">
+                <span class="svc-mock-title">Which performance stole the night?</span>
+                <span class="svc-chip is-live">Live</span>
+              </div>
+
+              <div class="svc-mock-barrow">
+                <span class="svc-mock-name">Opening act</span>
+                <span class="svc-mock-bar"><span class="svc-mock-bar-fill" style="width: 46%; --d: 0s;"></span></span>
+                <span class="svc-mock-value">23%</span>
+              </div>
+              <div class="svc-mock-barrow">
+                <span class="svc-mock-name">The band</span>
+                <span class="svc-mock-bar"><span class="svc-mock-bar-fill" style="width: 88%; --d: .12s;"></span></span>
+                <span class="svc-mock-value">44%</span>
+              </div>
+              <div class="svc-mock-barrow">
+                <span class="svc-mock-name">Dance troupe</span>
+                <span class="svc-mock-bar"><span class="svc-mock-bar-fill" style="width: 52%; --d: .24s;"></span></span>
+                <span class="svc-mock-value">26%</span>
+              </div>
+              <div class="svc-mock-barrow">
+                <span class="svc-mock-name">Finale</span>
+                <span class="svc-mock-bar"><span class="svc-mock-bar-fill is-muted" style="width: 14%; --d: .36s;"></span></span>
+                <span class="svc-mock-value">7%</span>
+              </div>
+
+              <div class="svc-mock-grid cols-2">
+                <div class="svc-mock-tile"><strong>1,842</strong><span>Responses</span></div>
+                <div class="svc-mock-tile"><strong>00:41</strong><span>Time open</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-deep-row is-reversed">
+        <div class="svc-deep-copy">
+          <span class="svc-deep-label">Surveys</span>
+          <h2 class="svc-deep-title">Surveys people actually finish</h2>
+          <p class="svc-deep-text">Long forms get abandoned. Build a short instrument with single- or multiple-choice
+            questions, reorder them until the flow reads naturally, and bulk-add options when a question has twenty
+            answers rather than four.</p>
+          <ul class="svc-deep-list">
+            <li>Single-choice and multiple-choice question types</li>
+            <li>Add, edit and reorder questions and options freely</li>
+            <li>Bulk-add options for long answer lists</li>
+            <li>Duplicate a survey to reuse it next cycle</li>
+          </ul>
+        </div>
+
+        <div class="svc-deep-visual">
+          <div class="browser-frame">
+            <div class="browser-header">
+              <div class="browser-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="browser-address">surveys / post-event</div>
+            </div>
+            <div class="svc-mock">
+              <div class="svc-mock-head">
+                <span class="svc-mock-title">Question 2 of 5</span>
+                <span class="svc-mock-sub">Single choice</span>
+              </div>
+
+              <div class="svc-mock-row is-highlight">
+                <span class="svc-mock-name">How did you hear about the awards?</span>
+              </div>
+
+              <div class="svc-mock-option is-picked">Social media</div>
+              <div class="svc-mock-option">A friend or colleague</div>
+              <div class="svc-mock-option">SMS from the organisers</div>
+              <div class="svc-mock-option">Radio or television</div>
+
+              <div class="svc-mock-barrow">
+                <span class="svc-mock-name">Completed</span>
+                <span class="svc-mock-bar"><span class="svc-mock-bar-fill" style="width: 40%; --d: 0s;"></span></span>
+                <span class="svc-mock-value">2/5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-deep-row">
+        <div class="svc-deep-copy">
+          <span class="svc-deep-label">Analytics</span>
+          <h2 class="svc-deep-title">Every response, counted and exportable</h2>
+          <p class="svc-deep-text">A single dashboard shows every poll across every event, so you are not hunting for
+            last quarter's numbers. Each one carries its response analytics, and the whole result set exports to Excel
+            for the report nobody wants to assemble by hand.</p>
+          <ul class="svc-deep-list">
+            <li>Polls dashboard spanning all events at a glance</li>
+            <li>Counts and percentages per option</li>
+            <li>Export poll results to Excel</li>
+            <li>Close a poll to freeze the record</li>
+          </ul>
+        </div>
+
+        <div class="svc-deep-visual">
+          <div class="browser-frame">
+            <div class="browser-header">
+              <div class="browser-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="browser-address">admin / polls</div>
+            </div>
+            <div class="svc-mock">
+              <div class="svc-mock-head">
+                <span class="svc-mock-title">All polls</span>
+                <span class="svc-chip">9 total</span>
+              </div>
+
+              <div class="svc-mock-row is-highlight">
+                <span class="svc-mock-name">Audience choice — gala night
+                  <span class="svc-mock-meta">1,842 responses · 4 options</span>
+                </span>
+                <span class="svc-chip is-live">Live</span>
+              </div>
+
+              <div class="svc-mock-row">
+                <span class="svc-mock-name">Post-event feedback
+                  <span class="svc-mock-meta">640 responses · 5 questions</span>
+                </span>
+                <span class="svc-chip is-ok">Closed</span>
+              </div>
+
+              <div class="svc-mock-row">
+                <span class="svc-mock-name">Category suggestions 2027
+                  <span class="svc-mock-meta">Standalone · not yet published</span>
+                </span>
+                <span class="svc-chip is-muted">Draft</span>
+              </div>
+
+              <div class="svc-mock-grid">
+                <div class="svc-mock-tile"><strong>9</strong><span>Polls</span></div>
+                <div class="svc-mock-tile"><strong>4,120</strong><span>Responses</span></div>
+                <div class="svc-mock-tile"><strong>3</strong><span>Events</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== How it works ===================== -->
+    <section class="svc-section" id="how-it-works">
+      <div class="svc-section-head">
+        <span class="svc-eyebrow">How It Works</span>
+        <h2 class="section-title">Question to answer in four steps</h2>
+        <p class="section-subtitle">Quick enough to build between sessions, which is usually when you decide you need
+          one.</p>
+      </div>
+
+      <div class="lifecycle-grid">
+        <div class="svc-step">
+          <div class="svc-step-number">1</div>
+          <div class="svc-step-phase">Build</div>
+          <h3 class="svc-step-title">Write the questions</h3>
+          <p class="svc-step-desc">Choose single or multiple choice, add your options — one at a time or in bulk — and
+            reorder until the sequence reads the way you would ask it aloud.</p>
+        </div>
+
+        <div class="svc-step">
+          <div class="svc-step-number">2</div>
+          <div class="svc-step-phase">Publish</div>
+          <h3 class="svc-step-title">Put it live</h3>
+          <p class="svc-step-desc">Publish to the public poll page on your microsite. Attach it to an event, or run it
+            standalone for community feedback between events.</p>
+        </div>
+
+        <div class="svc-step">
+          <div class="svc-step-number">3</div>
+          <div class="svc-step-phase">Collect</div>
+          <h3 class="svc-step-title">Watch it fill</h3>
+          <p class="svc-step-desc">Responses arrive from phones in the room and counts move in real time, with
+            percentages per option ready to put on the screen behind the stage.</p>
+        </div>
+
+        <div class="svc-step">
+          <div class="svc-step-number">4</div>
+          <div class="svc-step-phase">Close</div>
+          <h3 class="svc-step-title">Lock the result</h3>
+          <p class="svc-step-desc">Close the poll to stop responses, export the analytics to Excel, then duplicate or
+            reset it when you need the same questions again.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="faq" id="faq">
+      <div class="svc-section-head">
+        <span class="svc-eyebrow">Questions</span>
+        <h2 class="section-title">Audience engagement, answered</h2>
+        <p class="section-subtitle">What hosts and producers ask before they put a poll in the run sheet.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-svc-1">
+            <span class="faq-question">Does the audience need to install anything?</span>
+            <span class="faq-chevron-wrap">
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </button>
+          <div class="faq-content" id="faq-svc-1">
+            <div class="faq-answer">
+              No. Polls have a public page on your microsite, so participants open a link in whatever browser they
+              already have. There is no app, no account and no sign-in step between the question and the answer.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-svc-2">
+            <span class="faq-question">Can a poll run without being tied to an event?</span>
+            <span class="faq-chevron-wrap">
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </button>
+          <div class="faq-content" id="faq-svc-2">
+            <div class="faq-answer">
+              Yes. A poll can be attached to a specific event or run entirely standalone, which suits community
+              research and category suggestions between cycles. Either way it appears on the same polls dashboard
+              alongside everything else.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-svc-3">
+            <span class="faq-question">How is a poll different from the main awards voting?</span>
+            <span class="faq-chevron-wrap">
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </button>
+          <div class="faq-content" id="faq-svc-3">
+            <div class="faq-answer">
+              Awards voting runs through categories and candidates with paid vote bundles, USSD and payment gateways
+              behind it. Polls are lighter — free, instant and disposable — for the questions you ask a room rather
+              than a nation. Many programmes use both on the same night.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-svc-4">
+            <span class="faq-question">Can we reuse a poll we have already run?</span>
+            <span class="faq-chevron-wrap">
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </button>
+          <div class="faq-content" id="faq-svc-4">
+            <div class="faq-answer">
+              Two ways. Duplicate it, which leaves the original and its responses untouched, or reset the responses on
+              the existing poll and run the same questions with a new audience. Both keep you from rebuilding the
+              question set.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-svc-5">
+            <span class="faq-question">What do we get out at the end?</span>
+            <span class="faq-chevron-wrap">
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </button>
+          <div class="faq-content" id="faq-svc-5">
+            <div class="faq-answer">
+              Response analytics with counts and percentages for every option, and a full export to Excel. Closing the
+              poll freezes the record, so the numbers you quote in the post-event report are the numbers that were on
+              screen on the night.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Other services ===================== -->
+    <section class="svc-section" id="other-services">
+      <div class="svc-section-head">
+        <span class="svc-eyebrow">Explore More</span>
+        <h2 class="section-title">The rest of the platform</h2>
+        <p class="section-subtitle">Audience engagement is one of six services. They are built to work together on the
+          same event.</p>
+      </div>
+
+      <div class="features-grid">
+        <a class="svc-other-card to-event-management" href="event-management.html">
+          <span class="svc-other-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+          </span>
+          <span class="svc-other-body">
+            <span class="svc-other-name">Event Management
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </span>
+            <span class="svc-other-desc">Planning, registration, digital check-in and event microsites.</span>
+          </span>
+        </a>
+
+        <a class="svc-other-card to-digital-ticketing" href="digital-ticketing.html">
+          <span class="svc-other-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+              <line x1="7" y1="7" x2="7.01" y2="7" />
+            </svg>
+          </span>
+          <span class="svc-other-body">
+            <span class="svc-other-name">Digital Ticketing
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </span>
+            <span class="svc-other-desc">Secure sales, QR tickets, instant delivery and gate check-in.</span>
+          </span>
+        </a>
+
+        <a class="svc-other-card to-awards-management" href="awards-management.html">
+          <span class="svc-other-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="8" r="7" />
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+            </svg>
+          </span>
+          <span class="svc-other-body">
+            <span class="svc-other-name">Awards Management
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </span>
+            <span class="svc-other-desc">Nominations, multi-channel voting and winner announcements.</span>
+          </span>
+        </a>
+
+        <a class="svc-other-card to-branding-marketing" href="branding-marketing.html">
+          <span class="svc-other-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          </span>
+          <span class="svc-other-body">
+            <span class="svc-other-name">Branding and Marketing
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </span>
+            <span class="svc-other-desc">Branded microsites, campaigns and social promotion.</span>
+          </span>
+        </a>
+
+        <a class="svc-other-card to-event-support" href="event-support.html">
+          <span class="svc-other-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path
+                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+            </svg>
+          </span>
+          <span class="svc-other-body">
+            <span class="svc-other-name">Event Support Service
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </span>
+            <span class="svc-other-desc">Media coverage, sponsor management and venue logistics.</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================== CTA ===================== -->
+    <section class="svc-cta-section">
+      <div class="svc-cta-band">
+        <h2 class="svc-cta-title">Give the room something to do</h2>
+        <p class="svc-cta-text">Tell us about your run sheet and we will show you a live poll going up on screen,
+          filling in real time, and closing on cue.</p>
+        <div class="svc-cta-actions">
+          <a href="https://wa.me/254709368488" target="_blank" rel="noopener noreferrer" class="cta-primary svc-cta-accent">
+            <span>Request a Demo</span>
+            <span class="cta-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14">
+                <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </a>
+          <a href="index.html#pricing" class="cta-secondary">
+            <span>See Pricing</span>
+            <span class="cta-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14">
+                <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </a>
+        </div>
+        <p class="svc-cta-note">Typically replies in minutes on WhatsApp · +254 709 368488</p>
+      </div>
+    </section>
+
+    <!-- ===================== Footer ===================== -->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="dfe-logo.png" alt="Digitally Fit Awards logo" class="brand-logo" style="margin-bottom: 20px;" />
+          <p class="footer-desc">The complete awards management platform — empowering organizers across Africa to run
+            nominations, voting, ticketing, and winner announcements from one dashboard.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="event-management.html">Event Management</a></li>
+            <li><a href="digital-ticketing.html">Digital Ticketing</a></li>
+            <li><a href="awards-management.html">Awards Management</a></li>
+            <li><a href="branding-marketing.html">Branding and Marketing</a></li>
+            <li><a href="audience-engagement.html">Audience Engagement</a></li>
+            <li><a href="event-support.html">Event Support Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#how-it-works">How It Works</a></li>
+            <li><a href="index.html#pricing">Pricing</a></li>
+            <li><a href="index.html#voting-channels">Voting Channels</a></li>
+          </ul>
+        </div>
+        <div class="footer-col" id="contact">
+          <h4>Get in Touch</h4>
+          <ul class="footer-links footer-contact">
+            <li class="contact-item">
+              <span class="contact-label">Head Office</span>
+              <span class="contact-value">8th Floor, Westlands Business Park, Chiromo Lane, Nairobi, Kenya</span>
+            </li>
+            <li class="contact-item">
+              <span class="contact-label">Email Us</span>
+              <a href="mailto:info@digitallyfitawards.com" class="contact-link">info@digitallyfitawards.com</a>
+            </li>
+            <li class="contact-item">
+              <span class="contact-label">Call Us</span>
+              <a href="tel:+254709368488" class="contact-link">+254709368488</a>
+            </li>
+            <li class="contact-item">
+              <span class="contact-label">Working Hours</span>
+              <span class="contact-value">Mon – Fri: 8am – 5pm</span>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Social</h4>
+          <ul class="footer-links">
+            <li><a href="https://www.instagram.com/digitallyfitawards/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://x.com/DigitallyFAward" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
+            <li><a href="https://ke.linkedin.com/company/digitally-fit-awards" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Digitally Fit Awards. All rights reserved.</p>
+        <p>Built with ❤️ for Awards Organizers</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===================== Floating WhatsApp Button ===================== -->
+  <div class="wa-float" id="wa-float" role="complementary" aria-label="Chat on WhatsApp">
+    <!-- Tooltip card -->
+    <div class="wa-tooltip" id="wa-tooltip">
+      <button class="wa-tooltip-close" id="wa-close" aria-label="Dismiss">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"
+          stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+      <p class="wa-tooltip-title">Chat with us on WhatsApp <span class="wa-wave">👋</span></p>
+      <p class="wa-tooltip-sub">We typically reply in minutes</p>
+    </div>
+    <!-- WhatsApp button -->
+    <a class="wa-btn" href="https://wa.me/254709368488" target="_blank" rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M16.002 2C8.268 2 2 8.268 2 16.002c0 2.477.648 4.8 1.778 6.82L2 30l7.38-1.752A13.94 13.94 0 0 0 16.002 30C23.732 30 30 23.732 30 16.002 30 8.268 23.732 2 16.002 2zm0 25.417a11.36 11.36 0 0 1-5.795-1.586l-.416-.247-4.38 1.04 1.076-4.265-.271-.437A11.365 11.365 0 0 1 4.583 16c0-6.298 5.12-11.418 11.418-11.418S27.42 9.702 27.42 16c0 6.3-5.12 11.418-11.418 11.418zm6.258-8.548c-.343-.172-2.03-1.002-2.345-1.116-.315-.114-.544-.171-.773.172-.229.343-.886 1.116-1.086 1.344-.2.229-.4.257-.742.086-.343-.172-1.449-.534-2.76-1.703-1.02-.91-1.71-2.033-1.91-2.376-.2-.343-.021-.529.15-.7.154-.152.343-.4.514-.6.172-.2.229-.343.343-.572.114-.229.057-.429-.029-.6-.086-.172-.773-1.863-1.059-2.549-.28-.672-.563-.58-.773-.591l-.657-.011c-.229 0-.6.086-.914.429-.315.343-1.2 1.173-1.2 2.863 0 1.69 1.228 3.32 1.4 3.549.171.229 2.42 3.692 5.862 5.177.82.354 1.46.566 1.958.724.823.261 1.572.224 2.164.136.66-.099 2.03-.83 2.317-1.631.286-.8.286-1.486.2-1.63-.085-.142-.314-.228-.657-.4z" />
+      </svg>
+    </a>
+  </div>
+</body>
+
+</html>
