@@ -79,7 +79,10 @@
   document.querySelectorAll(
     '.section-eyebrow, .section-title, .section-subtitle, .sp-heading, .faq-eyebrow, ' +
     '.pricing-toggle, .diagram, .testimonials-proof-bar, .cta-card, .microsite-preview, .channel-badge, ' +
-    '.lifecycle-number, .lifecycle-phase, .lifecycle-title'
+    '.lifecycle-number, .lifecycle-phase, .lifecycle-title, ' +
+    // Service sub-pages — absent from index.html, so this is a no-op there.
+    // Only the section-head eyebrow: the hero one runs its own fadeUp.
+    '.svc-section-head .svc-eyebrow, .svc-deep-copy, .svc-deep-visual, .svc-cta-band'
   ).forEach(el => el.classList.add('reveal'));
 
   const io = new IntersectionObserver((entries) => {
@@ -307,18 +310,26 @@
     const trigger = item.querySelector('.faq-trigger');
     const content = item.querySelector('.faq-content');
 
+    // Guard: an item missing either part would otherwise throw here and
+    // take every IIFE below this one with it — including the mobile menu.
+    if (!trigger || !content) return;
+
     trigger.addEventListener('click', () => {
       const isOpen = item.classList.contains('open');
 
       // Close all other items
       items.forEach(otherItem => {
         otherItem.classList.remove('open');
-        otherItem.querySelector('.faq-content').style.maxHeight = null;
+        const otherContent = otherItem.querySelector('.faq-content');
+        if (otherContent) otherContent.style.maxHeight = null;
+        const otherTrigger = otherItem.querySelector('.faq-trigger');
+        if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
       });
 
       if (!isOpen) {
         item.classList.add('open');
         content.style.maxHeight = content.scrollHeight + 'px';
+        trigger.setAttribute('aria-expanded', 'true');
       }
     });
   });
@@ -385,7 +396,10 @@
   const toggleBtn = document.getElementById('nav-toggle');
   const closeBtn = document.getElementById('mobile-menu-close');
   const menuOverlay = document.getElementById('mobile-menu');
-  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+  // Sub-nav links close the drawer too. The Services group's own toggle
+  // is a .mobile-nav-trigger, deliberately not matched here, so expanding
+  // it does not dismiss the drawer.
+  const mobileLinks = document.querySelectorAll('.mobile-nav-link, .mobile-subnav-link');
   const body = document.body;
 
   if (!toggleBtn || !menuOverlay) return;
@@ -418,4 +432,100 @@
   mobileLinks.forEach(link => {
     link.addEventListener('click', closeMenu);
   });
+})();
+
+/* ============================================================
+   Services Dropdown — desktop panel + mobile drawer group
+
+   The desktop panel already opens on hover and :focus-within via
+   CSS. This adds the click path (touch devices, and keyboard users
+   who prefer Enter over tabbing through), plus Escape and
+   outside-click dismissal.
+   ============================================================ */
+(function () {
+  const toggle = document.getElementById('services-toggle');
+  const item = toggle && toggle.closest('.nav-item-dropdown');
+  if (!toggle || !item) return;
+
+  function open() {
+    item.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+
+  function close() {
+    item.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  toggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (item.classList.contains('is-open')) {
+      close();
+    } else {
+      open();
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!item.contains(e.target)) close();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape' || !item.classList.contains('is-open')) return;
+    close();
+    toggle.focus();
+  });
+
+  // Hovering out should also clear a click-opened panel, otherwise the
+  // CSS hover state and the JS class disagree about what is showing.
+  item.addEventListener('mouseleave', close);
+})();
+
+/* ============================================================
+   Mobile drawer — Services group expand/collapse
+   Uses the same max-height technique as the FAQ accordion.
+   ============================================================ */
+(function () {
+  const trigger = document.getElementById('mobile-services-toggle');
+  const panel = document.getElementById('mobile-services');
+  if (!trigger || !panel) return;
+
+  function expand() {
+    panel.classList.add('is-open');
+    panel.style.maxHeight = panel.scrollHeight + 'px';
+    trigger.setAttribute('aria-expanded', 'true');
+  }
+
+  function collapse() {
+    panel.classList.remove('is-open');
+    panel.style.maxHeight = null;
+    trigger.setAttribute('aria-expanded', 'false');
+  }
+
+  trigger.addEventListener('click', () => {
+    if (panel.classList.contains('is-open')) {
+      collapse();
+    } else {
+      expand();
+    }
+  });
+
+  // Service pages ship the group pre-expanded; give it a real height.
+  // scrollHeight reads 0 while the drawer is display-collapsed, so
+  // re-measure when the drawer actually opens.
+  if (panel.classList.contains('is-open')) {
+    expand();
+
+    const navToggle = document.getElementById('nav-toggle');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        if (panel.classList.contains('is-open')) {
+          // Next frame, once the drawer has been laid out
+          requestAnimationFrame(() => {
+            panel.style.maxHeight = panel.scrollHeight + 'px';
+          });
+        }
+      });
+    }
+  }
 })();
