@@ -4227,3 +4227,118 @@ body.lead-modal-active {
     animation: none;
   }
 }
+
+/* ============================================================
+   Telvoip Web Chat Widget + WhatsApp button
+
+   Vendor snippet. Markup lives at the end of <body> on every page,
+   and the two vendor stylesheets are loaded in <head> ahead of this
+   file. Kept verbatim from the supplier apart from:
+     - the WhatsApp number, set to the site's own 254709368488
+     - a mobile guard so the 370px chat panel cannot overflow a phone
+   ============================================================ */
+
+/* ===== TELVOIP BUTTON — RIGHT SIDE ===== */
+.floating-button {
+  position: fixed !important;
+  bottom: 30px !important;
+  right: 24px !important;
+  left: auto !important;
+  z-index: 9999 !important;
+  background-color: #7c3aed !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 56px !important;
+  height: 56px !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.material-icons-telvoip {
+  color: white !important;
+  font-family: 'Material Icons' !important;
+  font-size: 28px !important;
+}
+
+#chat-container {
+  display: none !important;
+  position: fixed !important;
+  bottom: 100px !important;
+  right: 24px !important;
+  left: auto !important;
+  z-index: 9998 !important;
+  width: 370px !important;
+  height: 520px !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25) !important;
+  background: #fff !important;
+}
+
+#chat-container.show {
+  display: block !important;
+}
+
+#chat-iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+}
+
+.close-button {
+  position: absolute !important;
+  top: 8px !important;
+  right: 10px !important;
+  background: red !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 28px !important;
+  height: 28px !important;
+  font-size: 14px !important;
+  cursor: pointer !important;
+  z-index: 10000 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* ===== WHATSAPP BUTTON — LEFT SIDE ===== */
+.whatsapp-button {
+  position: fixed !important;
+  bottom: 30px !important;
+  left: 24px !important;
+  right: auto !important;
+  z-index: 9999 !important;
+  background-color: #25D366 !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 56px !important;
+  height: 56px !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+}
+
+.whatsapp-button svg {
+  width: 32px !important;
+  height: 32px !important;
+  fill: white !important;
+}
+
+/* Added: at 370px wide plus a 24px offset the panel needs a 394px
+   viewport, so it would force horizontal scroll on most phones. */
+@media (max-width: 430px) {
+  #chat-container {
+    width: calc(100vw - 32px) !important;
+    right: 16px !important;
+    bottom: 96px !important;
+    height: min(520px, calc(100vh - 140px)) !important;
+  }
+}
