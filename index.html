@@ -10,6 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600;700;800&family=Open+Sans:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://app.telvoip.io/web-chat.css" rel="stylesheet" />
   <link rel="stylesheet" href="main.css" />
   <script src="script.js" defer></script>
 </head>
@@ -1469,29 +1471,38 @@
     </div>
   </div>
 
-  <!-- ===================== Floating WhatsApp Button ===================== -->
-  <div class="wa-float" id="wa-float" role="complementary" aria-label="Chat on WhatsApp">
-    <!-- Tooltip card -->
-    <div class="wa-tooltip" id="wa-tooltip">
-      <button class="wa-tooltip-close" id="wa-close" aria-label="Dismiss">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"
-          stroke-linecap="round">
-          <line x1="18" y1="6" x2="6" y2="18" />
-          <line x1="6" y1="6" x2="18" y2="18" />
-        </svg>
-      </button>
-      <p class="wa-tooltip-title">Chat with us on WhatsApp <span class="wa-wave">👋</span></p>
-      <p class="wa-tooltip-sub">We typically reply in minutes</p>
-    </div>
-    <!-- WhatsApp button -->
-    <a class="wa-btn" href="https://wa.me/254709368488" target="_blank" rel="noopener noreferrer"
-      aria-label="Chat on WhatsApp">
-      <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M16.002 2C8.268 2 2 8.268 2 16.002c0 2.477.648 4.8 1.778 6.82L2 30l7.38-1.752A13.94 13.94 0 0 0 16.002 30C23.732 30 30 23.732 30 16.002 30 8.268 23.732 2 16.002 2zm0 25.417a11.36 11.36 0 0 1-5.795-1.586l-.416-.247-4.38 1.04 1.076-4.265-.271-.437A11.365 11.365 0 0 1 4.583 16c0-6.298 5.12-11.418 11.418-11.418S27.42 9.702 27.42 16c0 6.3-5.12 11.418-11.418 11.418zm6.258-8.548c-.343-.172-2.03-1.002-2.345-1.116-.315-.114-.544-.171-.773.172-.229.343-.886 1.116-1.086 1.344-.2.229-.4.257-.742.086-.343-.172-1.449-.534-2.76-1.703-1.02-.91-1.71-2.033-1.91-2.376-.2-.343-.021-.529.15-.7.154-.152.343-.4.514-.6.172-.2.229-.343.343-.572.114-.229.057-.429-.029-.6-.086-.172-.773-1.863-1.059-2.549-.28-.672-.563-.58-.773-.591l-.657-.011c-.229 0-.6.086-.914.429-.315.343-1.2 1.173-1.2 2.863 0 1.69 1.228 3.32 1.4 3.549.171.229 2.42 3.692 5.862 5.177.82.354 1.46.566 1.958.724.823.261 1.572.224 2.164.136.66-.099 2.03-.83 2.317-1.631.286-.8.286-1.486.2-1.63-.085-.142-.314-.228-.657-.4z" />
-      </svg>
-    </a>
+  <!-- ===================== Telvoip Web Chat + WhatsApp ===================== -->
+  <!-- Styles for this block live in main.css under "Telvoip Web Chat Widget". -->
+
+  <!-- TELVOIP BUTTON — RIGHT -->
+  <button class="floating-button" aria-label="Open chat support" onclick="toggleChat()">
+    <span class="badge-telvoip"></span>
+    <span class="material-icons-telvoip">forum</span>
+  </button>
+
+  <!-- TELVOIP CHAT CONTAINER -->
+  <div id="chat-container">
+    <iframe id="chat-iframe" src="https://app.telvoip.io/web-chat?t=4e94c913-1775-4530-aeba-dbf4787af75a"
+      title="Web Chat Widget" frameborder="0" width="100%" height="100%">
+    </iframe>
+    <button class="close-button" aria-label="Close chat" onclick="toggleChat()">&#10006;</button>
   </div>
+
+  <!-- WHATSAPP BUTTON — LEFT -->
+  <a class="whatsapp-button" href="https://wa.me/254709368488" target="_blank" rel="noopener noreferrer"
+    aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <script>
+    function toggleChat() {
+      var chatContainer = document.getElementById("chat-container");
+      chatContainer.classList.toggle("show");
+    }
+  </script>
 </body>
 
 </html>
