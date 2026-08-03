@@ -3824,3 +3824,406 @@ body.mobile-menu-active {
   border-left-color: #ff7f00;
   padding-left: 22px;
 }
+
+/* ============================================================
+   Launch Your Awards — Lead capture modal
+
+   Two-step form behind the primary hero CTA. Reuses .cta-primary,
+   .btn-ghost and .btn-dark for its actions; everything else is
+   scoped under .lead-*. script.js drives the step state.
+   ============================================================ */
+.lead-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99998; /* under the mobile drawer (99999), over everything else */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  background: rgba(15, 23, 42, 0.42);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  visibility: hidden;
+  /* visibility flips instantly on open (so the first field is focusable
+     right away) and only after the fade on close */
+  transition: opacity 0.28s ease, visibility 0s linear 0.28s;
+  overflow-y: auto;
+}
+
+.lead-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.28s ease, visibility 0s;
+}
+
+.lead-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  margin: auto;
+  background: #fff;
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  padding: 34px 34px 28px;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.05),
+    0 24px 64px rgba(0, 0, 0, 0.22);
+  transform: translateY(16px) scale(0.985);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.lead-modal.is-open .lead-modal-card {
+  transform: translateY(0) scale(1);
+}
+
+/* The action buttons carry .cta-primary/.btn, whose display:inline-flex
+   beats the [hidden] attribute's default display:none. */
+.lead-modal [hidden] {
+  display: none !important;
+}
+
+.lead-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.03);
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.lead-modal-close:hover {
+  background: rgba(255, 127, 0, 0.1);
+  color: #ff7f00;
+}
+
+/* ---------- Head ---------- */
+.lead-head {
+  margin-bottom: 24px;
+  padding-right: 40px; /* clear of the close button */
+}
+
+.lead-step-badge {
+  display: inline-block;
+  padding: 5px 13px;
+  border-radius: 999px;
+  background: rgba(255, 127, 0, 0.1);
+  color: #ff7f00;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.lead-title {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  margin: 0 0 6px;
+}
+
+.lead-sub {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #64748b;
+  margin: 0 0 18px;
+}
+
+.lead-progress {
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.07);
+  overflow: hidden;
+}
+
+.lead-progress-fill {
+  display: block;
+  height: 100%;
+  width: 50%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ffa54f, #ff7f00, #e67200);
+  transition: width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ---------- Steps ---------- */
+.lead-step {
+  display: none;
+}
+
+.lead-step.is-active {
+  display: block;
+  animation: leadStepIn 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes leadStepIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.lead-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 16px;
+}
+
+/* ---------- Fields ---------- */
+.lead-field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.lead-field label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.req {
+  color: #ff7f00;
+}
+
+.lead-field input,
+.lead-field select {
+  width: 100%;
+  font-family: inherit;
+  font-size: 14px;
+  color: #1f1d2b;
+  padding: 11px 13px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #f8f9fb;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lead-field select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  /* Chevron drawn inline so it needs no image asset */
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 11px center;
+  padding-right: 34px;
+}
+
+.lead-field input:focus,
+.lead-field select:focus {
+  outline: none;
+  background: #fff;
+  border-color: rgba(255, 127, 0, 0.5);
+  box-shadow: 0 0 0 3px rgba(255, 127, 0, 0.14);
+}
+
+.lead-field.has-error input,
+.lead-field.has-error select {
+  border-color: rgba(225, 29, 72, 0.55);
+  background: rgba(225, 29, 72, 0.03);
+}
+
+.lead-error {
+  display: none;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #e11d48;
+  margin-top: 5px;
+}
+
+.lead-error.is-shown {
+  display: block;
+}
+
+.lead-note {
+  font-size: 13px;
+  color: #64748b;
+  margin: 16px 0 0;
+}
+
+.lead-note a {
+  color: #ff7f00;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.lead-note a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Checkboxes ---------- */
+.lead-fieldset {
+  border: none;
+  margin: 20px 0 4px;
+  padding: 0;
+}
+
+.lead-fieldset legend {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #334155;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.lead-checks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+}
+
+.lead-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: #334155;
+  cursor: pointer;
+}
+
+.lead-check input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  margin: 1px 0 0;
+  accent-color: #ff7f00;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.lead-consent {
+  margin-top: 18px;
+  padding: 13px 14px;
+  border-radius: 12px;
+  background: #f8f9fb;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.lead-consent.has-error {
+  border-color: rgba(225, 29, 72, 0.45);
+  background: rgba(225, 29, 72, 0.03);
+}
+
+/* Spacing for the standalone consent/marketing checkboxes only — grid
+   items inside .lead-checks get their spacing from the grid gap. */
+.lead-step > .lead-check + .lead-check:not(.lead-consent) {
+  margin-top: 12px;
+}
+
+/* ---------- Actions ---------- */
+.lead-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.lead-actions .lead-advance {
+  margin-left: auto;
+}
+
+.lead-actions .lead-advance[disabled] {
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+/* ---------- Success ---------- */
+.lead-done {
+  text-align: center;
+  padding: 18px 0 8px;
+}
+
+.lead-done-mark {
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: linear-gradient(135deg, #ffa54f, #ff7f00);
+  box-shadow: 0 10px 26px rgba(255, 127, 0, 0.32);
+}
+
+.lead-done h3 {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  margin: 0 0 8px;
+}
+
+.lead-done p {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #64748b;
+  max-width: 380px;
+  margin: 0 auto 24px;
+}
+
+body.lead-modal-active {
+  overflow: hidden;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .lead-modal {
+    padding: 0;
+  }
+
+  .lead-modal-card {
+    max-width: none;
+    min-height: 100%;
+    border-radius: 0;
+    border: none;
+    padding: 26px 20px calc(24px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .lead-grid,
+  .lead-checks {
+    grid-template-columns: 1fr;
+  }
+
+  .lead-title {
+    font-size: 22px;
+  }
+
+  .lead-actions {
+    flex-wrap: wrap;
+  }
+
+  .lead-actions .btn,
+  .lead-actions .lead-advance {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* Primary action sits above Back on a phone */
+  .lead-actions .lead-advance {
+    order: -1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lead-modal,
+  .lead-modal-card,
+  .lead-progress-fill {
+    transition: none;
+  }
+
+  .lead-step.is-active {
+    animation: none;
+  }
+}
