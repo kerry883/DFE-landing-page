@@ -452,13 +452,15 @@ ul {
   font-size: 12px;
 }
 
-/* Typography matches .section-title — inherits the Inter body stack,
-   800 weight, -.02em tracking. Only the size is hero-scale.
-   No text-wrap: balance here, unlike .section-title, because this
-   headline sets its own line breaks with <br /> in the markup. */
+/* Open Sans, the one place it is used — loaded only by index.html,
+   which is the only page carrying .hero-title.
+   Weight and tracking follow .section-title; only the size is
+   hero-scale. No text-wrap: balance here, unlike .section-title,
+   because this headline sets its own breaks with <br /> in markup. */
 .hero-title {
   margin: 22px auto 14px;
   max-width: 880px;
+  font-family: 'Open Sans', 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   font-size: clamp(48px, 7vw, 80px);
   line-height: 1.1;
   letter-spacing: -.02em;
