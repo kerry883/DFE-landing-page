@@ -306,7 +306,7 @@
           trail behind every result.</p>
 
         <div class="svc-hero-ctas">
-          <a href="https://wa.me/254709368488" target="_blank" rel="noopener noreferrer" class="cta-primary svc-cta-accent">
+          <a href="#lead-modal" class="cta-primary svc-cta-accent" data-lead-form>
             <span>Launch Your Awards</span>
             <span class="cta-arrow" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="14" height="14">
@@ -994,6 +994,243 @@
         <p>Built with ❤️ for Awards Organizers</p>
       </div>
     </footer>
+  </div>
+
+  <!-- ===================== Launch Your Awards — Lead Form ===================== -->
+  <div class="lead-modal" id="lead-modal" aria-hidden="true">
+    <div class="lead-modal-card" role="dialog" aria-modal="true" aria-labelledby="lead-modal-title">
+      <button class="lead-modal-close" id="lead-modal-close" type="button" aria-label="Close form">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
+          stroke-linecap="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+
+      <div class="lead-head">
+        <span class="lead-step-badge">Step <span id="lead-step-now">1</span> of 2</span>
+        <h2 class="lead-title" id="lead-modal-title">Launch your awards</h2>
+        <p class="lead-sub" id="lead-sub">Tell us how to reach you — about 20 seconds.</p>
+        <div class="lead-progress" aria-hidden="true">
+          <span class="lead-progress-fill" id="lead-progress-fill"></span>
+        </div>
+      </div>
+
+      <form class="lead-form" id="lead-form" novalidate>
+        <!-- ---------- Step 1 · Contact ---------- -->
+        <div class="lead-step is-active" data-step="1">
+          <div class="lead-grid">
+            <div class="lead-field">
+              <label for="lf-name">Full name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="lf-name" name="Full name" autocomplete="name" required />
+              <span class="lead-error" id="err-lf-name"></span>
+            </div>
+
+            <div class="lead-field">
+              <label for="lf-org">Organisation <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="lf-org" name="Organisation" autocomplete="organization" required />
+              <span class="lead-error" id="err-lf-org"></span>
+            </div>
+
+            <div class="lead-field">
+              <label for="lf-email">Work email <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="lf-email" name="Email" autocomplete="email" required />
+              <span class="lead-error" id="err-lf-email"></span>
+            </div>
+
+            <div class="lead-field">
+              <label for="lf-phone">WhatsApp number <span class="req" aria-hidden="true">*</span></label>
+              <input type="tel" id="lf-phone" name="Phone" autocomplete="tel" placeholder="+254 7XX XXX XXX" required />
+              <span class="lead-error" id="err-lf-phone"></span>
+            </div>
+          </div>
+
+          <p class="lead-note">
+            Prefer to talk now?
+            <a href="https://wa.me/254709368488" target="_blank" rel="noopener noreferrer">Chat with us on WhatsApp</a>
+          </p>
+        </div>
+
+        <!-- ---------- Step 2 · About the programme ---------- -->
+        <div class="lead-step" data-step="2">
+          <div class="lead-grid">
+            <div class="lead-field">
+              <label for="lf-programme">Programme name</label>
+              <input type="text" id="lf-programme" name="Programme" placeholder="e.g. Digitally Fit Awards 2026" />
+            </div>
+
+            <div class="lead-field">
+              <label for="lf-type">Event type</label>
+              <select id="lf-type" name="Event type">
+                <option value="">Select...</option>
+                <option>Awards programme</option>
+                <option>Conference or summit</option>
+                <option>Festival</option>
+                <option>Corporate event</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="lead-field">
+              <label for="lf-date">Target event date <span class="req" aria-hidden="true">*</span></label>
+              <input type="month" id="lf-date" name="Target date" required />
+              <span class="lead-error" id="err-lf-date"></span>
+            </div>
+
+            <div class="lead-field">
+              <label for="lf-country">Country</label>
+              <select id="lf-country" name="Country">
+                <option value="">Select...</option>
+                <option>Kenya</option>
+                <option>Nigeria</option>
+                <option>Ghana</option>
+                <option>Tanzania</option>
+                <option>Uganda</option>
+                <option>Rwanda</option>
+                <option>South Africa</option>
+                <option>Zambia</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="lead-field">
+              <label for="lf-city">City</label>
+              <input type="text" id="lf-city" name="City" autocomplete="address-level2" />
+            </div>
+
+            <div class="lead-field">
+              <label for="lf-edition">Is this a first edition?</label>
+              <select id="lf-edition" name="Edition">
+                <option value="">Select...</option>
+                <option>First edition</option>
+                <option>Returning programme</option>
+              </select>
+            </div>
+
+            <div class="lead-field">
+              <label for="lf-categories">Expected categories</label>
+              <select id="lf-categories" name="Categories">
+                <option value="">Select...</option>
+                <option>1 to 10</option>
+                <option>11 to 25</option>
+                <option>26 to 50</option>
+                <option>More than 50</option>
+              </select>
+            </div>
+
+            <div class="lead-field">
+              <label for="lf-audience">Expected voters or attendees</label>
+              <select id="lf-audience" name="Audience size">
+                <option value="">Select...</option>
+                <option>Under 1,000</option>
+                <option>1,000 to 10,000</option>
+                <option>10,000 to 100,000</option>
+                <option>More than 100,000</option>
+              </select>
+            </div>
+
+            <div class="lead-field">
+              <label for="lf-tickets">Will you sell tickets?</label>
+              <select id="lf-tickets" name="Selling tickets">
+                <option value="">Select...</option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="lead-field">
+              <label for="lf-paidvoting">Will voting be paid?</label>
+              <select id="lf-paidvoting" name="Paid voting">
+                <option value="">Select...</option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+          </div>
+
+          <fieldset class="lead-fieldset">
+            <legend>Which services do you need?</legend>
+            <div class="lead-checks">
+              <label class="lead-check">
+                <input type="checkbox" name="Services" value="Event Management" />
+                <span>Event Management</span>
+              </label>
+              <label class="lead-check">
+                <input type="checkbox" name="Services" value="Digital Ticketing" />
+                <span>Digital Ticketing</span>
+              </label>
+              <label class="lead-check">
+                <input type="checkbox" name="Services" value="Awards Management" />
+                <span>Awards Management</span>
+              </label>
+              <label class="lead-check">
+                <input type="checkbox" name="Services" value="Branding and Marketing" />
+                <span>Branding and Marketing</span>
+              </label>
+              <label class="lead-check">
+                <input type="checkbox" name="Services" value="Audience Engagement" />
+                <span>Audience Engagement</span>
+              </label>
+              <label class="lead-check">
+                <input type="checkbox" name="Services" value="Event Support Service" />
+                <span>Event Support Service</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Kenya Data Protection Act 2019: consent must be explicit and never
+               pre-ticked, and marketing consent has to be separable from the enquiry. -->
+          <label class="lead-check lead-consent">
+            <input type="checkbox" id="lf-consent" name="Consent" required />
+            <span>I agree to Digitally Fit Awards contacting me about this enquiry and storing these details for that
+              purpose. <span class="req" aria-hidden="true">*</span></span>
+          </label>
+          <span class="lead-error" id="err-lf-consent"></span>
+
+          <label class="lead-check">
+            <input type="checkbox" id="lf-marketing" name="Marketing opt-in" />
+            <span>Send me occasional product updates. (Optional)</span>
+          </label>
+        </div>
+
+        <div class="lead-actions">
+          <button type="button" class="btn btn-ghost lead-back" id="lead-back" hidden>Back</button>
+          <button type="button" class="cta-primary lead-advance" id="lead-next">
+            <span>Continue</span>
+            <span class="cta-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14">
+                <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </button>
+          <button type="submit" class="cta-primary lead-advance" id="lead-submit" hidden>
+            <span>Send enquiry</span>
+            <span class="cta-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14">
+                <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </form>
+
+      <!-- Shown after a successful submit -->
+      <div class="lead-done" id="lead-done" hidden>
+        <div class="lead-done-mark" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </div>
+        <h3>Thanks, we have it.</h3>
+        <p>Our team will be in touch on WhatsApp, usually within a few minutes during working hours.</p>
+        <button type="button" class="btn btn-dark" id="lead-done-close">Close</button>
+      </div>
+    </div>
   </div>
 
   <!-- ===================== Floating WhatsApp Button ===================== -->
