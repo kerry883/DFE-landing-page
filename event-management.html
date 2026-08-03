@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Host every event from one dashboard: categories, venues, speakers, sponsors, online registration, digital check-in and a branded public microsite." />
+  <title>Event Management — Digitally Fit Awards</title>
+  <link rel="icon" type="image/png" href="logo-favicon.png" />
+  <link rel="apple-touch-icon" href="logo-favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="subpage.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body class="svc svc-event-management">
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Decorative background overlays -->
+  <div class="bg-overlays" aria-hidden="true">
+    <span class="bokeh bokeh-1"></span>
+    <span class="bokeh bokeh-2"></span>
+    <span class="bokeh bokeh-3"></span>
+    <span class="bokeh bokeh-4"></span>
+    <span class="bokeh bokeh-5"></span>
+    <span class="bokeh bokeh-6"></span>
+
+    <!-- Constellation / mesh network SVG -->
+    <svg class="mesh mesh-left" viewBox="0 0 400 400" preserveAspectRatio="none" aria-hidden="true">
+      <g stroke="rgba(100,120,150,0.13)" stroke-width="0.8" fill="none">
+        <path d="M20 60 L120 30 L210 90 L300 50 L380 110" />
+        <path d="M40 200 L130 160 L220 230 L310 190 L380 260" />
+        <path d="M20 340 L110 300 L200 360 L290 320 L380 380" />
+        <path d="M120 30 L130 160 L110 300" />
+        <path d="M210 90 L220 230 L200 360" />
+        <path d="M300 50 L310 190 L290 320" />
+      </g>
+      <g fill="rgba(100,120,150,0.28)">
+        <circle cx="20" cy="60" r="1.6" />
+        <circle cx="120" cy="30" r="1.6" />
+        <circle cx="210" cy="90" r="1.6" />
+        <circle cx="300" cy="50" r="1.6" />
+        <circle cx="380" cy="110" r="1.6" />
+        <circle cx="40" cy="200" r="1.6" />
+        <circle cx="130" cy="160" r="1.6" />
+        <circle cx="220" cy="230" r="1.6" />
+        <circle cx="310" cy="190" r="1.6" />
+        <circle cx="380" cy="260" r="1.6" />
+        <circle cx="20" cy="340" r="1.6" />
+        <circle cx="110" cy="300" r="1.6" />
+        <circle cx="200" cy="360" r="1.6" />
+        <circle cx="290" cy="320" r="1.6" />
+        <circle cx="380" cy="380" r="1.6" />
+      </g>
+    </svg>
+    <svg class="mesh mesh-right" viewBox="0 0 400 400" preserveAspectRatio="none" aria-hidden="true">
+      <g stroke="rgba(100,120,150,0.13)" stroke-width="0.8" fill="none">
+        <path d="M30 40 L110 90 L210 40 L300 110 L380 60" />
+        <path d="M30 180 L120 140 L220 200 L300 150 L380 220" />
+        <path d="M30 330 L120 290 L210 350 L310 300 L380 360" />
+        <path d="M110 90 L120 140 L120 290" />
+        <path d="M210 40 L220 200 L210 350" />
+        <path d="M300 110 L300 150 L310 300" />
+      </g>
+      <g fill="rgba(100,120,150,0.28)">
+        <circle cx="30" cy="40" r="1.6" />
+        <circle cx="110" cy="90" r="1.6" />
+        <circle cx="210" cy="40" r="1.6" />
+        <circle cx="300" cy="110" r="1.6" />
+        <circle cx="380" cy="60" r="1.6" />
+        <circle cx="30" cy="180" r="1.6" />
+        <circle cx="120" cy="140" r="1.6" />
+        <circle cx="220" cy="200" r="1.6" />
+        <circle cx="300" cy="150" r="1.6" />
+        <circle cx="380" cy="220" r="1.6" />
+        <circle cx="30" cy="330" r="1.6" />
+        <circle cx="120" cy="290" r="1.6" />
+        <circle cx="210" cy="350" r="1.6" />
+        <circle cx="310" cy="300" r="1.6" />
+        <circle cx="380" cy="360" r="1.6" />
+      </g>
+    </svg>
+
+    <!-- Decorative sparkle -->
+    <svg class="sparkle" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 2 L13.8 9.5 L21 12 L13.8 14.5 L12 22 L10.2 14.5 L3 12 L10.2 9.5 Z" fill="rgba(100,120,160,0.35)" />
+    </svg>
+  </div>
+
+  <div class="page">
+    <!-- ===================== Header ===================== -->
+    <header class="site-header" role="banner">
+      <a class="brand" href="index.html" aria-label="Digitally Fit Awards home">
+        <img src="dfe-logo.png" alt="Digitally Fit Awards logo" class="brand-logo" />
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item-dropdown">
+            <button type="button" class="nav-link nav-dropdown-toggle is-active" id="services-toggle"
+              aria-expanded="false" aria-controls="services-menu" aria-haspopup="true">
+              Features
+              <svg class="nav-caret" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+
+            <div class="nav-dropdown-menu" id="services-menu" aria-labelledby="services-toggle">
+              <div class="nav-dd-grid">
+                <a class="nav-dd-item to-event-management is-current" href="event-management.html" aria-current="page">
+                  <span class="nav-dd-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                  </span>
+                  <span class="nav-dd-body">
+                    <span class="nav-dd-name">Event Management</span>
+                    <span class="nav-dd-desc">Planning, registration and check-in</span>
+                  </span>
+                </a>
+
+                <a class="nav-dd-item to-digital-ticketing" href="digital-ticketing.html">
+                  <span class="nav-dd-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+                      <line x1="7" y1="7" x2="7.01" y2="7" />
+                    </svg>
+                  </span>
+                  <span class="nav-dd-body">
+                    <span class="nav-dd-name">Digital Ticketing</span>
+                    <span class="nav-dd-desc">QR tickets, checkout and entry</span>
+                  </span>
+                </a>
+
+                <a class="nav-dd-item to-awards-management" href="awards-management.html">
+                  <span class="nav-dd-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <circle cx="12" cy="8" r="7" />
+                      <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+                    </svg>
+                  </span>
+                  <span class="nav-dd-body">
+                    <span class="nav-dd-name">Awards Management</span>
+                    <span class="nav-dd-desc">Nominations, voting and winners</span>
+                  </span>
+                </a>
+
+                <a class="nav-dd-item to-branding-marketing" href="branding-marketing.html">
+                  <span class="nav-dd-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                  </span>
+                  <span class="nav-dd-body">
+                    <span class="nav-dd-name">Branding and Marketing</span>
+                    <span class="nav-dd-desc">Microsites, campaigns and reach</span>
+                  </span>
+                </a>
+
+                <a class="nav-dd-item to-audience-engagement" href="audience-engagement.html">
+                  <span class="nav-dd-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                  </span>
+                  <span class="nav-dd-body">
+                    <span class="nav-dd-name">Audience Engagement</span>
+                    <span class="nav-dd-desc">Live polls, surveys and voting</span>
+                  </span>
+                </a>
+
+                <a class="nav-dd-item to-event-support" href="event-support.html">
+                  <span class="nav-dd-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path
+                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                    </svg>
+                  </span>
+                  <span class="nav-dd-body">
+                    <span class="nav-dd-name">Event Support Service</span>
+                    <span class="nav-dd-desc">Media, sponsors and logistics</span>
+                  </span>
+                </a>
+              </div>
+
+              <a class="nav-dd-all" href="index.html#features">
+                View all platform features
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            </div>
+          </li>
+          <li><a href="index.html#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="index.html#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://wa.me/254709368488" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Request a Quote</a>
+        <a href="https://wa.me/254709368488" target="_blank" rel="noopener noreferrer" class="btn btn-dark">Request a Demo</a>
+      </div>
+
+      <!-- Hamburger Menu Trigger (Mobile only) -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger-bar bar-top"></span>
+        <span class="hamburger-bar bar-middle"></span>
+        <span class="hamburger-bar bar-bottom"></span>
+      </button>
+    </header>
+
+    <!-- ===================== Mobile Overlay Menu ===================== -->
+    <div class="mobile-menu-overlay" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-inner">
+        <div class="mobile-menu-header">
+          <a class="brand" href="index.html" aria-label="Digitally Fit Awards home">
+            <img src="dfe-logo.png" alt="Digitally Fit Awards logo" class="brand-logo" />
+          </a>
+          <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <nav class="mobile-nav" aria-label="Mobile Primary">
+          <ul>
+            <li style="--i: 1;"><a href="index.html" class="mobile-nav-link">Home</a></li>
+            <li style="--i: 2;" class="mobile-nav-group">
+              <button type="button" class="mobile-nav-trigger is-active" id="mobile-services-toggle" aria-expanded="true" aria-controls="mobile-services">
+                Features
+                <svg class="mobile-nav-caret" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <ul class="mobile-subnav is-open" id="mobile-services">
+                <li><a href="event-management.html" class="mobile-subnav-link is-current" aria-current="page">Event Management</a></li>
+                <li><a href="digital-ticketing.html" class="mobile-subnav-link">Digital Ticketing</a></li>
+                <li><a href="awards-management.html" class="mobile-subnav-link">Awards Management</a></li>
+                <li><a href="branding-marketing.html" class="mobile-subnav-link">Branding and Marketing</a></li>
+                <li><a href="audience-engagement.html" class="mobile-subnav-link">Audience Engagement</a></li>
+                <li><a href="event-support.html" class="mobile-subnav-link">Event Support Service</a></li>
+              </ul>
+            </li>
+            <li style="--i: 3;"><a href="index.html#how-it-works" class="mobile-nav-link">How It Works</a></li>
+            <li style="--i: 4;"><a href="index.html#pricing" class="mobile-nav-link">Pricing</a></li>
+            <li style="--i: 5;"><a href="index.html#contact" class="mobile-nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="mobile-menu-footer">
+          <a href="https://wa.me/254709368488" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="--i: 6;">Request a Quote</a>
+          <a href="https://wa.me/254709368488" target="_blank" rel="noopener noreferrer" class="btn btn-dark" style="--i: 7;">Request a Demo</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== Hero ===================== -->
+    <section class="svc-hero" aria-labelledby="svc-title">
+      <div class="svc-hero-glow" aria-hidden="true"></div>
+
+      <div class="svc-hero-copy">
+        <nav class="svc-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <a href="index.html#features">Services</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span aria-current="page">Event Management</span>
+        </nav>
+
+        <span class="svc-eyebrow">Event Management</span>
+
+        <h1 id="svc-title" class="svc-hero-title">
+          Plan it, publish it, <span class="accent">run it</span>
+        </h1>
+
+        <p class="svc-hero-lead">Host every event you run from one place — categories, venues, speakers, sponsors and
+          the full agenda. Publish a branded microsite, take registrations, check guests in at the door, and watch the
+          day unfold on a live feed.</p>
+
+        <div class="svc-hero-ctas">
+          <a href="https://wa.me/254709368488" target="_blank" rel="noopener noreferrer" class="cta-primary svc-cta-accent">
+            <span>Start Planning</span>
+            <span class="cta-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14">
+                <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </a>
+          <a href="#how-it-works" class="cta-secondary">
+            <span>See How It Works</span>
+            <span class="cta-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14">
+                <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="svc-hero-visual" aria-hidden="true">
+        <div class="svc-hero-emblem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+        </div>
+        <span class="svc-orbit svc-orbit-1">Agenda builder</span>
+        <span class="svc-orbit svc-orbit-2">Live event feed</span>
+        <span class="svc-orbit svc-orbit-3">Digital check-in</span>
+      </div>
+    </section>
+
+    <!-- ===================== Stats ===================== -->
+    <section class="svc-stats stats-section" aria-label="Event management at a glance">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">200+</div>
+          <div class="stat-label">Events Hosted</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">15+</div>
+          <div class="stat-label">Microsite Page Types</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">3</div>
+          <div class="stat-label">Event Phases</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">50K+</div>
+          <div class="stat-label">Guests Registered</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Capabilities ===================== -->
+    <section class="svc-section" id="capabilities">
+      <div class="svc-section-head">
+        <span class="svc-eyebrow">Capabilities</span>
+        <h2 class="section-title">One dashboard for the whole event</h2>
+        <p class="section-subtitle">Everything the day needs, from the first planning session to the last guest
+          through the door.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="svc-card">
+          <div class="svc-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7" />
+              <rect x="14" y="3" width="7" height="7" />
+              <rect x="14" y="14" width="7" height="7" />
+              <rect x="3" y="14" width="7" height="7" />
+            </svg>
+          </div>
+          <h3 class="svc-card-title">Multi-Event Hosting</h3>
+          <p class="svc-card-desc">Run as many events as you need from a single account, each moving through its own
+            phases — nominations, voting, closed. Duplicate a past event and its settings come with it.</p>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <line x1="19" y1="8" x2="19" y2="14" />
+              <line x1="22" y1="11" x2="16" y2="11" />
+            </svg>
+          </div>
+          <h3 class="svc-card-title">Online Registration</h3>
+          <p class="svc-card-desc">Attendee sign-up that works independently of ticketing, so free and invite-only
+            events are first-class. Every registration flows straight into your central contacts list.</p>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2" />
+              <line x1="7" y1="12" x2="17" y2="12" />
+            </svg>
+          </div>
+          <h3 class="svc-card-title">Digital Check-In</h3>
+          <p class="svc-card-desc">Scan guests in at the gate or check in a whole group at once. The arrival report
+            tells you who came, when they arrived and which entrance they used.</p>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+          </div>
+          <h3 class="svc-card-title">Event Microsites</h3>
+          <p class="svc-card-desc">A public site for every event with more than fifteen built-in page types — home,
+            speakers, gallery, sponsors, FAQ, contact and the rest — all under your own branding.</p>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="8" y1="6" x2="21" y2="6" />
+              <line x1="8" y1="12" x2="21" y2="12" />
+              <line x1="8" y1="18" x2="21" y2="18" />
+              <line x1="3" y1="6" x2="3.01" y2="6" />
+              <line x1="3" y1="12" x2="3.01" y2="12" />
+              <line x1="3" y1="18" x2="3.01" y2="18" />
+            </svg>
+          </div>
+          <h3 class="svc-card-title">Programme &amp; Logistics</h3>
+          <p class="svc-card-desc">Venues with capacity and map links, speakers with bios and session details,
+            sponsors with tier levels, plus an agenda builder and programme booklet uploads.</p>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+            </svg>
+          </div>
+          <h3 class="svc-card-title">Live Event Feed</h3>
+          <p class="svc-card-desc">A real-time view of the event as it happens — arrivals, sales and activity ticking
+            over — so you can spot a queue building before your guests complain about it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Deep dives ===================== -->
+    <section class="svc-deep" aria-label="How event management works in detail">
+
+      <div class="svc-deep-row">
+        <div class="svc-deep-copy">
+          <span class="svc-deep-label">Set Up</span>
+          <h2 class="svc-deep-title">Build it once, run it every year</h2>
+          <p class="svc-deep-text">Most awards programmes are annual, and rebuilding the same structure each cycle is
+            wasted work. Duplicate last year's event and everything comes with it — categories, sub-categories,
+            sponsor tiers, page layout. Change the dates and you are live.</p>
+          <ul class="svc-deep-list">
+            <li>Full event copy including settings and structure</li>
+            <li>Categories and sub-categories, reorganised freely</li>
+            <li>Cover images, banners and poster assets per event</li>
+            <li>Cancel or archive an event without losing its records</li>
+          </ul>
+        </div>
+
+        <div class="svc-deep-visual">
+          <div class="browser-frame">
+            <div class="browser-header">
+              <div class="browser-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="browser-address">admin / events</div>
+            </div>
+            <div class="svc-mock">
+              <div class="svc-mock-rail" aria-hidden="true">
+                <div class="svc-mock-step is-done"><span class="bead"></span>Set up</div>
+                <div class="svc-mock-track is-done"></div>
+                <div class="svc-mock-step is-active"><span class="bead"></span>Nominations</div>
+                <div class="svc-mock-track"></div>
+                <div class="svc-mock-step"><span class="bead"></span>Voting</div>
+                <div class="svc-mock-track"></div>
+                <div class="svc-mock-step"><span class="bead"></span>Closed</div>
+              </div>
+
+              <div class="svc-mock-head">
+                <span class="svc-mock-title">Your events</span>
+                <span class="svc-chip">4 active</span>
+              </div>
+
+              <div class="svc-mock-row is-highlight">
+                <span class="svc-mock-avatar">26</span>
+                <span class="svc-mock-name">Digitally Fit Awards 2026
+                  <span class="svc-mock-meta">Nominations open · 18 categories</span>
+                </span>
+                <span class="svc-chip is-live">Live</span>
+              </div>
+
+              <div class="svc-mock-row">
+                <span class="svc-mock-avatar">25</span>
+                <span class="svc-mock-name">Digitally Fit Awards 2025
+                  <span class="svc-mock-meta">Archived · duplicated to 2026</span>
+                </span>
+                <span class="svc-chip is-muted">Closed</span>
+              </div>
+
+              <div class="svc-mock-row">
+                <span class="svc-mock-avatar">TS</span>
+                <span class="svc-mock-name">Tech Summit Nairobi
+                  <span class="svc-mock-meta">Registration open · 900 capacity</span>
+                </span>
+                <span class="svc-chip is-ok">Selling</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-deep-row is-reversed">
+        <div class="svc-deep-copy">
+          <span class="svc-deep-label">Registration &amp; Entry</span>
+          <h2 class="svc-deep-title">From sign-up to seated, without a clipboard</h2>
+          <p class="svc-deep-text">Guests register online and arrive with a code. On the night, your team scans them in
+            — or checks in a full table at once when the queue backs up. Every arrival is timestamped, so the
+            post-event report writes itself.</p>
+          <ul class="svc-deep-list">
+            <li>Registration separate from ticketing, for free and invited guests</li>
+            <li>Scan-based check-in, plus bulk check-in for groups</li>
+            <li>Arrival, time and gate captured on every entry</li>
+            <li>Attendee list and check-in report export to Excel and PDF</li>
+          </ul>
+        </div>
+
+        <div class="svc-deep-visual">
+          <div class="browser-frame">
+            <div class="browser-header">
+              <div class="browser-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="browser-address">admin / check-in</div>
+            </div>
+            <div class="svc-mock">
+              <div class="svc-mock-head">
+                <span class="svc-mock-title">Gala night check-in</span>
+                <span class="svc-chip is-live">Doors open</span>
+              </div>
+
+              <div class="svc-mock-row is-highlight">
+                <span class="svc-mock-qr" aria-hidden="true"></span>
+                <span class="svc-mock-name">Scan to admit
+                  <span class="svc-mock-meta">Main entrance · Gate A</span>
+                </span>
+                <span class="svc-chip is-ok">Valid</span>
+              </div>
+
+              <div class="svc-mock-barrow">
+                <span class="svc-mock-name">Arrived</span>
+                <span class="svc-mock-bar"><span class="svc-mock-bar-fill" style="width: 86%; --d: 0s;"></span></span>
+                <span class="svc-mock-value">1,284</span>
+              </div>
+
+              <div class="svc-mock-grid">
+                <div class="svc-mock-tile"><strong>1,500</strong><span>Expected</span></div>
+                <div class="svc-mock-tile"><strong>1,284</strong><span>Checked in</span></div>
+                <div class="svc-mock-tile"><strong>6</strong><span>Gates open</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-deep-row">
+        <div class="svc-deep-copy">
+          <span class="svc-deep-label">Public Microsite</span>
+          <h2 class="svc-deep-title">A public site without hiring a developer</h2>
+          <p class="svc-deep-text">Every event gets its own front end, ready to publish. Speakers, sponsors, the
+            agenda, galleries and FAQs all pull from what you have already entered in the dashboard — so the site is
+            never out of date with the plan.</p>
+          <ul class="svc-deep-list">
+            <li>More than fifteen built-in page types, no coding</li>
+            <li>Photo albums and a separate video gallery</li>
+            <li>Programme booklets and documents attached per event</li>
+            <li>Floating WhatsApp chat on every page</li>
+          </ul>
+        </div>
+
+        <div class="svc-deep-visual">
+          <div class="browser-frame">
+            <div class="browser-header">
+              <div class="browser-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="browser-address">your-event.digitallyfitawards.com</div>
+            </div>
+            <div class="svc-mock">
+              <div class="svc-mock-head">
+                <span class="svc-mock-title">Published pages</span>
+                <span class="svc-chip">15 live</span>
+              </div>
+
+              <div class="svc-mock-mosaic" aria-hidden="true">
+                <span class="svc-mock-thumb is-wide"></span>
+                <span class="svc-mock-thumb"></span>
+                <span class="svc-mock-thumb"></span>
+                <span class="svc-mock-thumb"></span>
+                <span class="svc-mock-thumb"></span>
+                <span class="svc-mock-thumb is-wide"></span>
+              </div>
+
+              <div class="svc-mock-grid">
+                <div class="svc-mock-tile"><strong>18</strong><span>Speakers</span></div>
+                <div class="svc-mock-tile"><strong>12</strong><span>Sponsors</span></div>
+                <div class="svc-mock-tile"><strong>240</strong><span>Photos</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== How it works ===================== -->
+    <section class="svc-section" id="how-it-works">
+      <div class="svc-section-head">
+        <span class="svc-eyebrow">How It Works</span>
+        <h2 class="section-title">Four steps to event day</h2>
+        <p class="section-subtitle">The same path every organiser takes, with the platform holding the detail so you
+          can hold the room.</p>
+      </div>
+
+      <div class="lifecycle-grid">
+        <div class="svc-step">
+          <div class="svc-step-number">1</div>
+          <div class="svc-step-phase">Create</div>
+          <h3 class="svc-step-title">Set up the event</h3>
+          <p class="svc-step-desc">Name it, set the dates, upload your cover and banner artwork, and lay out the
+            categories — or duplicate last year's event and adjust.</p>
+        </div>
+
+        <div class="svc-step">
+          <div class="svc-step-number">2</div>
+          <div class="svc-step-phase">Build</div>
+          <h3 class="svc-step-title">Add the programme</h3>
+          <p class="svc-step-desc">Enter venues, speakers and sponsor tiers, build the agenda, upload the programme
+            booklet, and answer the FAQs people always ask.</p>
+        </div>
+
+        <div class="svc-step">
+          <div class="svc-step-number">3</div>
+          <div class="svc-step-phase">Publish</div>
+          <h3 class="svc-step-title">Open registration</h3>
+          <p class="svc-step-desc">Push the microsite live and start taking sign-ups. Contacts build automatically as
+            guests register, ready for your email and SMS blasts.</p>
+        </div>
+
+        <div class="svc-step">
+          <div class="svc-step-number">4</div>
+          <div class="svc-step-phase">Run</div>
+          <h3 class="svc-step-title">Work the room</h3>
+          <p class="svc-step-desc">Check guests in by scan or in bulk, follow the live feed through the evening, and
+            export the attendance report before you leave the venue.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="faq" id="faq">
+      <div class="svc-section-head">
+        <span class="svc-eyebrow">Questions</span>
+        <h2 class="section-title">Event management, answered</h2>
+        <p class="section-subtitle">What organisers ask before they move their first event onto the platform.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-svc-1">
+            <span class="faq-question">Can I run more than one event at a time?</span>
+            <span class="faq-chevron-wrap">
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </button>
+          <div class="faq-content" id="faq-svc-1">
+            <div class="faq-answer">
+              Yes. The platform is multi-event by design — you can host as many events as you need under one account,
+              and each moves through its own phases independently. One can be taking nominations while another is
+              already selling tickets.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-svc-2">
+            <span class="faq-question">Do I have to rebuild everything for next year's edition?</span>
+            <span class="faq-chevron-wrap">
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </button>
+          <div class="faq-content" id="faq-svc-2">
+            <div class="faq-answer">
+              No. Duplicating an event makes a full copy including its settings, categories and structure. You adjust
+              the dates and artwork, and the new edition is ready. Last year's event stays archived with all of its
+              records intact.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-svc-3">
+            <span class="faq-question">What is the difference between registration and ticketing?</span>
+            <span class="faq-chevron-wrap">
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </button>
+          <div class="faq-content" id="faq-svc-3">
+            <div class="faq-answer">
+              Registration captures who is coming without taking payment, which suits free, invited or corporate
+              guest lists. Ticketing handles paid entry with checkout, QR codes and refunds. They run separately, so
+              you can use either or both on the same event.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-svc-4">
+            <span class="faq-question">Does the public event site need a developer?</span>
+            <span class="faq-chevron-wrap">
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </button>
+          <div class="faq-content" id="faq-svc-4">
+            <div class="faq-answer">
+              No. Every event gets a microsite with more than fifteen ready-made page types, and the content is drawn
+              from what you enter in the dashboard. Add a speaker in admin and the speakers page updates — there is
+              nothing to deploy.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-svc-5">
+            <span class="faq-question">What happens to guest details after the event?</span>
+            <span class="faq-chevron-wrap">
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </button>
+          <div class="faq-content" id="faq-svc-5">
+            <div class="faq-answer">
+              Registrations and ticket purchases backfill into a central contacts list that spans all of your events,
+              and it exports to Excel whenever you need it. That list becomes the audience for next year's email and
+              SMS campaigns.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Other services ===================== -->
+    <section class="svc-section" id="other-services">
+      <div class="svc-section-head">
+        <span class="svc-eyebrow">Explore More</span>
+        <h2 class="section-title">The rest of the platform</h2>
+        <p class="section-subtitle">Event management is one of six services. They are built to work together on the
+          same event.</p>
+      </div>
+
+      <div class="features-grid">
+        <a class="svc-other-card to-digital-ticketing" href="digital-ticketing.html">
+          <span class="svc-other-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+              <line x1="7" y1="7" x2="7.01" y2="7" />
+            </svg>
+          </span>
+          <span class="svc-other-body">
+            <span class="svc-other-name">Digital Ticketing
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </span>
+            <span class="svc-other-desc">Secure sales, QR tickets, instant delivery and gate check-in.</span>
+          </span>
+        </a>
+
+        <a class="svc-other-card to-awards-management" href="awards-management.html">
+          <span class="svc-other-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="8" r="7" />
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+            </svg>
+          </span>
+          <span class="svc-other-body">
+            <span class="svc-other-name">Awards Management
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </span>
+            <span class="svc-other-desc">Nominations, multi-channel voting and winner announcements.</span>
+          </span>
+        </a>
+
+        <a class="svc-other-card to-branding-marketing" href="branding-marketing.html">
+          <span class="svc-other-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          </span>
+          <span class="svc-other-body">
+            <span class="svc-other-name">Branding and Marketing
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </span>
+            <span class="svc-other-desc">Branded microsites, campaigns and social promotion.</span>
+          </span>
+        </a>
+
+        <a class="svc-other-card to-audience-engagement" href="audience-engagement.html">
+          <span class="svc-other-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </span>
+          <span class="svc-other-body">
+            <span class="svc-other-name">Audience Engagement
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </span>
+            <span class="svc-other-desc">Live polls, digital surveys and interactive participation.</span>
+          </span>
+        </a>
+
+        <a class="svc-other-card to-event-support" href="event-support.html">
+          <span class="svc-other-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path
+                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+            </svg>
+          </span>
+          <span class="svc-other-body">
+            <span class="svc-other-name">Event Support Service
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </span>
+            <span class="svc-other-desc">Media coverage, sponsor management and venue logistics.</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================== CTA ===================== -->
+    <section class="svc-cta-section">
+      <div class="svc-cta-band">
+        <h2 class="svc-cta-title">Bring your next event onto the platform</h2>
+        <p class="svc-cta-text">Tell us the dates and the shape of your programme. We will walk you through the
+          dashboard running a real event end to end.</p>
+        <div class="svc-cta-actions">
+          <a href="https://wa.me/254709368488" target="_blank" rel="noopener noreferrer" class="cta-primary svc-cta-accent">
+            <span>Request a Demo</span>
+            <span class="cta-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14">
+                <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </a>
+          <a href="index.html#pricing" class="cta-secondary">
+            <span>See Pricing</span>
+            <span class="cta-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14">
+                <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </a>
+        </div>
+        <p class="svc-cta-note">Typically replies in minutes on WhatsApp · +254 709 368488</p>
+      </div>
+    </section>
+
+    <!-- ===================== Footer ===================== -->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="dfe-logo.png" alt="Digitally Fit Awards logo" class="brand-logo" style="margin-bottom: 20px;" />
+          <p class="footer-desc">The complete awards management platform — empowering organizers across Africa to run
+            nominations, voting, ticketing, and winner announcements from one dashboard.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="event-management.html">Event Management</a></li>
+            <li><a href="digital-ticketing.html">Digital Ticketing</a></li>
+            <li><a href="awards-management.html">Awards Management</a></li>
+            <li><a href="branding-marketing.html">Branding and Marketing</a></li>
+            <li><a href="audience-engagement.html">Audience Engagement</a></li>
+            <li><a href="event-support.html">Event Support Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#how-it-works">How It Works</a></li>
+            <li><a href="index.html#pricing">Pricing</a></li>
+            <li><a href="index.html#voting-channels">Voting Channels</a></li>
+          </ul>
+        </div>
+        <div class="footer-col" id="contact">
+          <h4>Get in Touch</h4>
+          <ul class="footer-links footer-contact">
+            <li class="contact-item">
+              <span class="contact-label">Head Office</span>
+              <span class="contact-value">8th Floor, Westlands Business Park, Chiromo Lane, Nairobi, Kenya</span>
+            </li>
+            <li class="contact-item">
+              <span class="contact-label">Email Us</span>
+              <a href="mailto:info@digitallyfitawards.com" class="contact-link">info@digitallyfitawards.com</a>
+            </li>
+            <li class="contact-item">
+              <span class="contact-label">Call Us</span>
+              <a href="tel:+254709368488" class="contact-link">+254709368488</a>
+            </li>
+            <li class="contact-item">
+              <span class="contact-label">Working Hours</span>
+              <span class="contact-value">Mon – Fri: 8am – 5pm</span>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Social</h4>
+          <ul class="footer-links">
+            <li><a href="https://www.instagram.com/digitallyfitawards/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://x.com/DigitallyFAward" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
+            <li><a href="https://ke.linkedin.com/company/digitally-fit-awards" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Digitally Fit Awards. All rights reserved.</p>
+        <p>Built with ❤️ for Awards Organizers</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===================== Floating WhatsApp Button ===================== -->
+  <div class="wa-float" id="wa-float" role="complementary" aria-label="Chat on WhatsApp">
+    <!-- Tooltip card -->
+    <div class="wa-tooltip" id="wa-tooltip">
+      <button class="wa-tooltip-close" id="wa-close" aria-label="Dismiss">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"
+          stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+      <p class="wa-tooltip-title">Chat with us on WhatsApp <span class="wa-wave">👋</span></p>
+      <p class="wa-tooltip-sub">We typically reply in minutes</p>
+    </div>
+    <!-- WhatsApp button -->
+    <a class="wa-btn" href="https://wa.me/254709368488" target="_blank" rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M16.002 2C8.268 2 2 8.268 2 16.002c0 2.477.648 4.8 1.778 6.82L2 30l7.38-1.752A13.94 13.94 0 0 0 16.002 30C23.732 30 30 23.732 30 16.002 30 8.268 23.732 2 16.002 2zm0 25.417a11.36 11.36 0 0 1-5.795-1.586l-.416-.247-4.38 1.04 1.076-4.265-.271-.437A11.365 11.365 0 0 1 4.583 16c0-6.298 5.12-11.418 11.418-11.418S27.42 9.702 27.42 16c0 6.3-5.12 11.418-11.418 11.418zm6.258-8.548c-.343-.172-2.03-1.002-2.345-1.116-.315-.114-.544-.171-.773.172-.229.343-.886 1.116-1.086 1.344-.2.229-.4.257-.742.086-.343-.172-1.449-.534-2.76-1.703-1.02-.91-1.71-2.033-1.91-2.376-.2-.343-.021-.529.15-.7.154-.152.343-.4.514-.6.172-.2.229-.343.343-.572.114-.229.057-.429-.029-.6-.086-.172-.773-1.863-1.059-2.549-.28-.672-.563-.58-.773-.591l-.657-.011c-.229 0-.6.086-.914.429-.315.343-1.2 1.173-1.2 2.863 0 1.69 1.228 3.32 1.4 3.549.171.229 2.42 3.692 5.862 5.177.82.354 1.46.566 1.958.724.823.261 1.572.224 2.164.136.66-.099 2.03-.83 2.317-1.631.286-.8.286-1.486.2-1.63-.085-.142-.314-.228-.657-.4z" />
+      </svg>
+    </a>
+  </div>
+</body>
+
+</html>
