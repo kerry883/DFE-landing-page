@@ -454,9 +454,11 @@ ul {
 
 /* Open Sans, the one place it is used — loaded only by index.html,
    which is the only page carrying .hero-title.
-   Weight and tracking follow .section-title; only the size is
-   hero-scale. No text-wrap: balance here, unlike .section-title,
-   because this headline sets its own breaks with <br /> in markup. */
+   Bold (700) rather than the 800 the section titles use — Open Sans
+   sits heavier than Inter at the same weight, so 700 reads closer to
+   the rest of the page. No text-wrap: balance here, unlike
+   .section-title, because this headline sets its own breaks with
+   <br /> in the markup. */
 .hero-title {
   margin: 22px auto 14px;
   max-width: 880px;
@@ -464,7 +466,7 @@ ul {
   font-size: clamp(48px, 7vw, 80px);
   line-height: 1.1;
   letter-spacing: -.02em;
-  font-weight: 800;
+  font-weight: 700;
   font-style: normal;
   color: #0f172a;
   text-shadow: none;
@@ -473,7 +475,7 @@ ul {
 .hero-title em,
 .hero-title i {
   font-style: italic;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 /* Gradient ink on the hashtag line — same oranges as the primary CTA */
