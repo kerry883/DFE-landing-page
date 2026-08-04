@@ -843,5 +843,13 @@
     else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   });
 
+  // Any trigger carrying [data-video-modal] or href="#videoModal" can re-open the popup
+  document.querySelectorAll('[data-video-modal], a[href="#videoModal"]').forEach(trigger => {
+    trigger.addEventListener('click', e => {
+      e.preventDefault();
+      openModal();
+    });
+  });
+
   openModal();
 })();
