@@ -781,3 +781,67 @@
       .then(() => { btnSubmit.disabled = false; });
   });
 })();
+
+/* ============================================================
+   Video ad popup
+
+   Opens automatically once the landing page has rendered. The iframe
+   src is assigned only at open time and cleared on close, so YouTube
+   is never requested on page load and the audio stops immediately
+   rather than playing on behind the fade-out.
+   ============================================================ */
+(function () {
+  const VIDEO_SRC = 'https://www.youtube.com/embed/Kgh5jh4vXbw?autoplay=1&rel=0&enablejsapi=1';
+
+  const modal = document.getElementById('videoModal');
+  const frame = document.getElementById('videoModalFrame');
+  if (!modal || !frame) return;
+
+  const closeBtn = document.getElementById('videoModalClose');
+  const dialog = modal.querySelector('.video-modal-content');
+  let lastFocused = null;
+
+  function openModal() {
+    lastFocused = document.activeElement;
+    frame.src = VIDEO_SRC;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('video-modal-active');
+    if (closeBtn) requestAnimationFrame(() => closeBtn.focus());
+  }
+
+  function closeModal() {
+    if (!modal.classList.contains('is-open')) return;
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('video-modal-active');
+    frame.src = 'about:blank';
+    if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+  }
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+  // Backdrop click, but not clicks on the video itself
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+  document.addEventListener('keydown', e => {
+    if (!modal.classList.contains('is-open')) return;
+
+    if (e.key === 'Escape') { closeModal(); return; }
+    if (e.key !== 'Tab') return;
+
+    // Only the close button is reachable, so keep Tab on it rather than
+    // letting focus escape to the page behind the backdrop
+    const focusable = [].slice.call(dialog.querySelectorAll(
+      'button:not([disabled]), iframe, a[href], [tabindex]:not([tabindex="-1"])'
+    ));
+    if (!focusable.length) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+
+  openModal();
+})();

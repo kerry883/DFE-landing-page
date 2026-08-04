@@ -334,6 +334,30 @@
       </div>
     </figure>
 
+    <!-- ===================== Video Demo Section ===================== -->
+    <section class="video-section" id="video-demo" aria-label="Product demonstration video">
+      <div class="video-container">
+        <div class="video-header">
+          <span class="video-label">See it in action</span>
+          <h2 class="video-title">Watch how Oraventino works</h2>
+          <p class="video-description">A quick walkthrough of the complete awards management platform, from nominations to results.</p>
+        </div>
+        <div class="video-wrapper">
+          <div class="video-frame">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/Kgh5jh4vXbw"
+              title="Digitally Fit Awards - Platform Demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===================== Trusted By ===================== -->
     <section class="sp-section" aria-label="Trusted by leading organisations">
       <p class="sp-heading">
@@ -1467,6 +1491,26 @@
         <h3>Thanks, we have it.</h3>
         <p>Our team will be in touch on WhatsApp, usually within a few minutes during working hours.</p>
         <button type="button" class="btn btn-dark" id="lead-done-close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== Video Ad Popup Modal ===================== -->
+  <div class="video-modal" id="videoModal" aria-hidden="true">
+    <div class="video-modal-dialog">
+      <div class="video-modal-content" role="dialog" aria-modal="true" aria-label="Watch demo video">
+        <!-- Floating close button, sits outside the top-right corner of the video -->
+        <button type="button" class="video-close-btn" id="videoModalClose" aria-label="Close">&#10005;</button>
+
+        <div class="video-modal-body">
+          <div class="video-ratio">
+            <!-- src stays empty until the modal opens, so YouTube is never
+                 fetched on page load, and is reset on close to kill the audio -->
+            <iframe id="videoModalFrame" src="" title="Digitally Fit Awards product demo"
+              allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+        </div>
       </div>
     </div>
   </div>
