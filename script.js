@@ -158,7 +158,7 @@
   if (!track) return;
 
   const logos = [
-    { name: "Digitally Fit Awards", color: "#ff7f00" },
+    { name: "Digitally Fit Events", color: "#ff7f00" },
     { name: "Tuqio", color: "#1fa348" },
     { name: "Elimisha Network", color: "#4f46e5" },
     { name: "Acco", color: "#0ea5e9" },
