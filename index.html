@@ -301,15 +301,17 @@ function onYouTubeIframeAPIReady() {
 
     <!-- Hero -->
 <section class="hero" aria-labelledby="hero-title">
-  <!-- Video Background Container -->
-  <div class="hero-video-background">
+  <!-- Video Background Container.
+       aria-hidden + tabindex="-1": this is decoration, so it should not be
+       announced by a screen reader or take a tab stop ahead of the CTAs. -->
+  <div class="hero-video-background" aria-hidden="true">
     <iframe
-    id="hero-video"
-  src="https://www.youtube.com/embed/Kgh5jh4vXbw?autoplay=1&mute=1&loop=1&controls=0&playlist=Kgh5jh4vXbw&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&cc_load_policy=0&disablekb=1&fs=0&autohide=1&enablejsapi=1"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen>
-</iframe>
+      id="hero-video"
+      src="https://www.youtube.com/embed/Kgh5jh4vXbw?autoplay=1&mute=1&loop=1&controls=0&playlist=Kgh5jh4vXbw&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&cc_load_policy=0&disablekb=1&fs=0&autohide=1&enablejsapi=1&playsinline=1"
+      title="Background footage"
+      tabindex="-1"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+    </iframe>
 
     <!-- Overlay  -->
     <div class="hero-overlay"></div>
@@ -350,6 +352,11 @@ function onYouTubeIframeAPIReady() {
       </a>
     </div>
   </div>
+
+  <a class="hero-scroll-cue" href="#video-demo" aria-label="Scroll to see the platform in action">
+    <span aria-hidden="true"></span>
+    Scroll
+  </a>
 </section>
 
     <!-- ===================== Product Screenshot ===================== -->
