@@ -473,7 +473,7 @@ ul {
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.82);
   border: 1px solid rgba(0, 0, 0, 0.08);
-  font-size: 13px;
+  font-size: 25px;
   color: #374151;
   font-weight: 600;
   letter-spacing: .01em;
@@ -483,8 +483,8 @@ ul {
 }
 
 .badge-dot {
-  width: 8px;
-  height: 8px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: #ff7f00;
   flex-shrink: 0;
@@ -538,10 +538,10 @@ ul {
   margin: 22px auto 14px;
   max-width: 880px;
   font-family: 'Open Sans', 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  font-size: clamp(40px, 7vw, 50px);
+  font-size: clamp(40px, 9vw, 80px);
   line-height: 1.1;
   letter-spacing: -.02em;
-  font-weight: 700;
+  font-weight: 1000;
   font-style: normal;
   color: #13203e;
   text-shadow: none;
@@ -550,7 +550,7 @@ ul {
 .hero-title em,
 .hero-title i {
   font-style: italic;
-  font-weight: 700;
+  font-weight: 1000;
 }
 
 /* Gradient ink on the hashtag line — same oranges as the primary CTA */
@@ -561,12 +561,13 @@ ul {
   -webkit-text-fill-color: transparent;
   color: #ff7f00;
   font-style: normal;
+  font-size: 80px;
 }
 
 .hero-subtitle {
   margin: 0 auto 28px;
   max-width: 620px;
-  font-size: 15px;
+  font-size: 24px;
   color: #f7f7f7;
   line-height: 1.7;
   letter-spacing: .01em;
@@ -587,12 +588,12 @@ ul {
   justify-content: center;
   gap: 10px;
   padding: 0 24px;
-  min-height: 48px;
+  min-height: 50px;
   border-radius: 14px;
   background: linear-gradient(160deg, #ffa54f 0%, #ff7f00 45%, #e67200 100%);
   color: #fff;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 26px;
   border: none;
   box-shadow:
     0 4px 14px rgba(255, 127, 0, .38),
@@ -618,8 +619,8 @@ ul {
 
 /* Arrow icon circle inside primary CTA */
 .cta-arrow {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background: rgba(255, 255, 255, .22);
   display: inline-flex;
@@ -642,7 +643,7 @@ ul {
   padding: 0 24px;
   min-height: 48px;
   border-radius: 14px;
-  font-size: 16px;
+  font-size: 26px;
   font-weight: 700;
   color: #fff;
   background: #15131e;
